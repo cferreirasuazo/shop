@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import SliderProducto from "./SliderProducto/SliderProducto"
 import styled from 'styled-components';
 import shopping_bag from "./shopping_bag.png"
+import items from "../../../../../tools/test";
+
 
 const Grid = styled.div`
     border:1px solid red;
@@ -30,22 +32,12 @@ function Inicio(){
             <h1>Lorem ipsum dolor sit amet</h1>
 
             <Grid>
-                    <Item>
+               {items.map((item)=>(
+                   <Item>
                         <img src={shopping_bag}/>
-                        <p>Nombre</p>    
-                    </Item>
-                    <Item>#</Item>
-                    <Item>#</Item>
-                    <Item>#</Item>
-                    <Item>#</Item>
-                    <Item>#</Item>
-                    <Item>#</Item>
-                    <Item>#</Item>
-                    <Item>#</Item>
-                    <Item>#</Item>
-                    <Item>#</Item>
-                    
-
+                        <h1>{item}</h1>
+                   </Item>
+               ))}
             </Grid> 
 
         </div>

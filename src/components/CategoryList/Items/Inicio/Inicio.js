@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import SliderProducto from "./SliderProducto/SliderProducto"
 import styled from 'styled-components';
 import shopping_bag from "./shopping_bag.png"
-
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 
 
 const Grid = styled.div`
@@ -34,12 +35,12 @@ function Inicio(){
        <div>
         <h1>INICIO</h1>
         <ArticuloDelDia>
-                <div>
+                <Box>
                     <p>Lorem Ipsum</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <p>$$$$$$$$$$$</p>
-                    <button>Ver Articulo</button>
-                </div>
+                    <Button>Ver Articulo</Button>
+                </Box>
                 
                 <div>
                     <img src ={shopping_bag} />

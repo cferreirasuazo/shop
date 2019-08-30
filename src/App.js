@@ -7,13 +7,12 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Inicio from "./components/CategoryList/Items/Inicio/Inicio";
 import Nosotros from "./components/CategoryList/Items/Nosotros/Nosotros";
 import Footer from "./components/Footer/Footer"
-
 import shopping_bag from "./components/Logo/shopping_bag.png";
-import items from "../tools/test"
+
 
 class App extends Component {
   render() {
-    console.log(items)
+    
     return (
 
       <BrowserRouter>

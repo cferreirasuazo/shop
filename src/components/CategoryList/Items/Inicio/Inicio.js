@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import SliderProducto from "./SliderProducto/SliderProducto"
 import styled from 'styled-components';
 import shopping_bag from "./shopping_bag.png"
-import items from "../../../../../tools/test";
+
 
 
 const Grid = styled.div`
@@ -21,23 +21,39 @@ const Item = styled.div`
         padding:10px;
 `
 
+const ArticuloDelDia = styled.div`
+    border: 1px solid red;
+
+`
+
+
+
 
 function Inicio(){
     return (
        <div>
-         <h1>INICIO</h1>
-        <SliderProducto/>
-
+        <h1>INICIO</h1>
+        <ArticuloDelDia>
+                <div>
+                    <p>Lorem Ipsum</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>$$$$$$$$$$$</p>
+                    <button>Ver Articulo</button>
+                </div>
+                
+                <div>
+                    <img src ={shopping_bag} />
+                </div>
+        </ArticuloDelDia>
         <div>
             <h1>Lorem ipsum dolor sit amet</h1>
 
             <Grid>
-               {items.map((item)=>(
-                   <Item>
-                        <img src={shopping_bag}/>
-                        <h1>{item}</h1>
-                   </Item>
-               ))}
+                {
+                    ["Chair","Bacon","Computer","Chicken","Soap","Mouse","Tuna","Car","Shoes","Table","Hat","Keyboard"].map((categoria)=>(
+                        <Item>{categoria}</Item>    
+                    ))
+                }
             </Grid> 
 
         </div>

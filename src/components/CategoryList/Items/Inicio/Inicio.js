@@ -1,11 +1,9 @@
 import React from "react" 
-import { makeStyles } from '@material-ui/core/styles';
+//import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
-import shopping_bag from "./shopping_bag.png"
-import Button from '@material-ui/core/Button';
-import {Link,Route,Router} from "react-router-dom";
-
-
+//import shopping_bag from "./shopping_bag.png"
+//import Button from '@material-ui/core/Button';
+import {Link} from "react-router-dom";
 
 
 const Grid = styled.div`
@@ -22,10 +20,7 @@ const Grid = styled.div`
     margin-bottom:10px;
 
 `
-const Item = styled.div`
-        border:1px solid red
-        padding:10px;
-`
+
 
 function Inicio(){
 
@@ -37,7 +32,7 @@ function Inicio(){
 
     const links = categorias.map((categoria)=>{
         return (
-                <Link>{categoria}</Link>
+                <Link to={`/${categoria}`} key={categoria}>{categoria}</Link>
         )
     })
 

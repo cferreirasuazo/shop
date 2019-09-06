@@ -25,9 +25,9 @@ class App extends Component {
         </div>
         <CategoryList/>
          <Switch>
-            <Route path="/" exact    component={Inicio}  />
-            <Route path="/nosotros"  component={Nosotros}  />
-            <Route path="/ofertas"  />
+            <Route path="/" exact component={Inicio}  />
+            <Route path="/nosotros" component={Nosotros}  />
+            <Route path="/ofertas" />
             <Route path="/pedidos" />
             <Route path="/categorias" />
             <Route path="/mercancia" component={Mercancia}/>     

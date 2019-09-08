@@ -16,8 +16,9 @@ class App extends Component {
     
     return (
       
-      <BrowserRouter>
+     
       <div className="App">
+      <BrowserRouter>
       <AppBar/>
       
         <div className="App-header">
@@ -33,9 +34,12 @@ class App extends Component {
             <Route path="/mercancia" component={Mercancia}/>     
             <Route path="/:nombre" component={Articulo}/>      
          </Switch>
+         <Footer></Footer>
+        </BrowserRouter>
+       
       </div>
-      <Footer></Footer>
-      </BrowserRouter>
+     
+      
      
     );
   }

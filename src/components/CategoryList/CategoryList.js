@@ -1,24 +1,21 @@
 import React from 'react'
 import Box from '@material-ui/core/Box';
-//import Paper from '@material-ui/core/Paper';
-//import { makeStyles } from '@material-ui/core/styles';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
-//import DropDown from "../Dropdown"
-//import Button from '@material-ui/core/Button';
+
 const BoxNavBar = styled(Box)`
     display:flex;
     justify-content:center;
+    padding:13px;
+    flex-wrap:wrap;
 
 `
 
 const Item = styled(Link)`
-     margin-right:10px;
+     margin-right:15px;
      list-style:none;
      text-decoration:none;
-
 `
-
 
 function CategoryList(){
     
@@ -37,6 +34,5 @@ function CategoryList(){
 
     )
 }
-
 
 export default CategoryList

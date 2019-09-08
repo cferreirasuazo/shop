@@ -1,10 +1,13 @@
 .root{
     
     background-color:gold;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin: auto;
+    width: 50%;
     padding: 10px;
+}
+
+.grid{
+    border:1px solid blue;
     
 }
 

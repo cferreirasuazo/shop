@@ -4,20 +4,19 @@ import styled from 'styled-components';
 //import shopping_bag from "./shopping_bag.png"
 //import Button from '@material-ui/core/Button';
 import {Link} from "react-router-dom";
-
+import Card from '@material-ui/core/Card';
+import "./styles.css"
 
 const Grid = styled.div`
     border:1px solid red;
-    padding-right: 40px;
-    padding-left: 40px;
     display: grid;
     margin: 0 auto;
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: minmax(200px, auto);
     grid-gap: 8px;
-    padding:25px;
     margin-top:5px;
     margin-bottom:10px;
+    padding:25px;
 
 `
 
@@ -32,7 +31,7 @@ function Inicio(){
 
     const links = categorias.map((categoria)=>{
         return (
-                <Link to={`/${categoria}`} key={categoria}>{categoria}</Link>
+             <Card classes={{root:"cardRed"}}>{categoria}</Card>   // <Link to={`/${categoria}`} key={categoria}>{categoria}</Link>
         )
     })
 
@@ -40,7 +39,7 @@ function Inicio(){
        <div>
         <h1>INICIO</h1>
         <div>
-            <h1>Lorem ipsum dolor sit amet</h1>
+            <h1 className>Lorem ipsum dolor sit amet</h1>
 
             <Grid>
                 {

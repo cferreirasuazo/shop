@@ -6,15 +6,15 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import { makeStyles } from '@material-ui/core/styles';
-import "./styles.css"
+import "./styles.css";
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
     card: {
       width: 175,
       height:175,
       backgroundColor:"green",
-      marginBottom:5.1,
-      marginRight:4
+      
     },
     bullet: {
       display: 'inline-block',
@@ -27,6 +27,12 @@ const useStyles = makeStyles({
     pos: {
       marginBottom: 12,
     },
+
+    grid:{
+      
+    }
+
+
   });
 
 
@@ -43,16 +49,18 @@ const useStyles = makeStyles({
 
         let cards = articulos.map((articulo)=>{
             return (
-               <div> <Card className={classes.card}>{articulo}</Card></div>
+               <Grid><Card className={classes.card}>{articulo}</Card></Grid>
             )
         })
 
         return(
             <Container classes = {{root:"root"}} maxWidth="lg">
-                
+                <Grid className={"grid"} container alignItems="center">
                 {
                     cards
                 }
+                </Grid> 
+               
             </Container>    
         )
     }

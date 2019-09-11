@@ -1,0 +1,32 @@
+.wrapper{
+  
+}
+
+.wrapper :nth-child(2){
+    
+}
+
+.buscador{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buscador .title{
+    font-size: 25px;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form :nth-child(n) {
+    margin-right: 1px;
+  }
+
+.form .select{
+    width:150px;
+    font-size: 1px;
+}

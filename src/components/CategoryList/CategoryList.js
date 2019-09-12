@@ -8,9 +8,7 @@ const BoxNavBar = styled(Box)`
     justify-content:center;
     padding:13px;
     flex-wrap:wrap;
-
 `
-
 const Item = styled(Link)`
      margin-right:15px;
      list-style:none;

@@ -17,9 +17,7 @@ const Grid = styled.div`
     margin-top:5px;
     margin-bottom:10px;
     padding:25px;
-
 `
-
 
 function Inicio(){
 

@@ -14,7 +14,9 @@
     "react-slick": "^0.24.0",
     "styled-components": "^4.3.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "faker": "^4.1.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

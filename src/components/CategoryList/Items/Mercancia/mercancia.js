@@ -8,6 +8,8 @@ import {Box,Button,Container, InputLabel, MenuItem,
          FormControl, Select,InputBase, TextField, Card } from "@material-ui/core"
 
 import "./styles.css";
+import items from "../../../../fakeItems";
+
 
 const lista = ["Chair","Bacon","Computer","Chicken","Soap"].map((item)=>{
     return(
@@ -20,19 +22,30 @@ const ordenar = ["A-Z","Z-A","Menor-Mayor","Mayor-Menor"].map((item)=>{
     )
 })
 
-const items = ['Lorem',
-               'ipsum',
-               'sed',
-               'vitae',
-               'placerat',
-               'aliquet',
-               'consequat' ].map((item)=>{
-                    return(
-                        <Card>{item}</Card>
-                    )
-               });
+// const items = ['Lorem',
+//                'ipsum',
+//                'sed',
+//                'vitae',
+//                'placerat',
+//                'aliquet',
+//                'consequat' ].map((item)=>{
+//                     return(
+//                         <Card className={"item"}>{item}</Card>
+//                     )
+//                });
+
+const list = items.map((item)=>{
+    return (
+        <Card className={"item"}>{item.nombre}</Card>
+    )
+})
+
+
+
+
 
 function Mercancia(){
+    
     return (
        <Container className={"wrapper"}>
            <Box className="buscador">               
@@ -58,17 +71,12 @@ function Mercancia(){
             </Box> 
             </Box>
            <Box className={"content"}>
-                {items}
+                {list}
            </Box>
         
        </Container>
     )
 }
-
-
-
-
-
 
 export default Mercancia
 

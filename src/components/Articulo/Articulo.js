@@ -1,10 +1,10 @@
-import React ,{Component}from "react";
-import {Link} from "react-router-dom";
+import React from "react";
+//import {Link} from "react-router-dom";
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
+// import CardActionArea from '@material-ui/core/CardActionArea';
+// import CardActions from '@material-ui/core/CardActions';
+// import CardContent from '@material-ui/core/CardContent';
 import { makeStyles } from '@material-ui/core/styles';
 import "./styles.css";
 import Grid from '@material-ui/core/Grid';
@@ -34,11 +34,6 @@ const useStyles = makeStyles({
 
 
   });
-
-
-
-
-
     
     function Articulo(){
         let articulos = ['Lorem','ipsum',
@@ -54,7 +49,7 @@ const useStyles = makeStyles({
         })
 
         return(
-            <Container classes = {{root:"root"}} maxWidth="lg">
+            <Container classes={{root:"root"}} maxWidth="lg">
                 <Grid className={"grid"} container alignItems="center">
                 {
                     cards

@@ -1,51 +1,85 @@
-//CREAR funcion para genrar Grid utilizando ese componente
-//Tomar 3-4 items para hacer una fila y luego insertarlo como en 
-//el ejemplo https://material-ui.com/components/grid/
 
-import React from "react";
-import styled from "styled-components";
+import React, {useState} from "react";
 import {Box,Button,Container, InputLabel, MenuItem, 
-         FormControl, Select,InputBase, TextField, Card } from "@material-ui/core"
+         FormControl, Select, Card } from "@material-ui/core"
 
 import "./styles.css";
-import items from "../../../../fakeItems";
+import fakeItems from "../../../../fakeItems";
 
 
 const lista = ["Chair","Bacon","Computer","Chicken","Soap"].map((item)=>{
     return(
-        <MenuItem value={item}>{item}</MenuItem>
+        <MenuItem key={item} value={item}>{item}</MenuItem>
     )
 })
-const ordenar = ["A-Z","Z-A","Menor-Mayor","Mayor-Menor"].map((item)=>{
+const ordenar = ["a-z","z-a","menor-mayor","mayor-menor"].map((item)=>{
     return(
-        <MenuItem value={item}>{item}</MenuItem>
+        <MenuItem key={item} value={item}>{item}</MenuItem>
     )
 })
-
-// const items = ['Lorem',
-//                'ipsum',
-//                'sed',
-//                'vitae',
-//                'placerat',
-//                'aliquet',
-//                'consequat' ].map((item)=>{
-//                     return(
-//                         <Card className={"item"}>{item}</Card>
-//                     )
-//                });
-
-const list = items.map((item)=>{
-    return (
-        <Card className={"item"}>{item.nombre}</Card>
-    )
-})
-
-
-
-
 
 function Mercancia(){
-    
+
+    const makeCard = (item) =>{
+        return(
+            <Card key={item.codigo} className={"item"}>
+                <p>{item.nombre}</p>
+                <p>{item.precio}</p>
+            </Card> 
+        )
+    }
+
+    const [list,setList] = useState( fakeItems.map(makeCard))
+    const [orden,setOrden] = useState("") 
+
+    //Devuelve una Card list nuevo ordenado en orden alfabetico en base del nombre
+    function nuevoOrden(orden){
+
+        if(orden === "a-z"){
+            return function(items){
+                var arr = items.sort((a,b)=>{
+                      return a["nombre"].localeCompare(b["nombre"]);})
+                
+                return arr
+            }
+        }else if(orden === "z-a"){
+            return function(items){
+                var arr = items.sort((a,b)=>{
+                      return b["nombre"].localeCompare(a["nombre"]);})
+                
+                return arr
+            }
+        }else if(orden === "menor-mayor"){
+            return function(items){
+                console.log(orden)
+                var arr = items.sort((a,b)=>{
+                    
+                    return Number(a.precio) - Number(b.precio)
+                })
+
+                return arr;
+            }
+        }else if(orden === "mayor-menor"){
+            return function(items){
+                console.log(orden)
+                var arr = items.sort((a,b)=>{
+                    
+                    return Number(b.precio) - Number(a.precio)
+                })
+
+                return arr;
+            }
+        }
+    }
+
+    const handleClickSelect = (event) =>{
+        setOrden(event.target.value)
+        var nuevaLista = nuevoOrden(event.target.value)
+        var lista = nuevaLista(fakeItems)
+        setList(lista.map(makeCard))
+        
+    }
+
     return (
        <Container className={"wrapper"}>
            <Box className="buscador">               
@@ -62,8 +96,12 @@ function Mercancia(){
                </FormControl>
 
                <FormControl className={"select"}>
-                <InputLabel  htmlFor="ordernar">Ordenar Por</InputLabel>
-                    <Select>
+               <InputLabel  htmlFor="orden">Ordenar por </InputLabel>
+                    <Select
+                        value={orden}
+                        onChange={handleClickSelect}
+                        
+                    >
                        {ordenar}
                     </Select>
                </FormControl>

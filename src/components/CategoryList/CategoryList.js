@@ -22,9 +22,6 @@ function CategoryList(){
         <div>
             <BoxNavBar>
                 <Item to="/" ><Box>Inicio</Box></Item>
-                <Item to="/categorias" ><Box>categorias</Box></Item>
-                <Item to="/ofertas" ><Box>Ofertas</Box></Item>
-                <Item to="/mercancia" ><Box>Mercancia</Box></Item>
                 <Item to="/pedidos" ><Box>Como Hacer Pedidos</Box></Item>
                 <Item to="/nosotros" ><Box>Nosotros</Box></Item>
             </BoxNavBar>   

@@ -14,6 +14,8 @@ import Card from '@material-ui/core/Card';
 import "./styles.css"
 import png from "../../../../statics/bacon.png";
 import { Container } from "@material-ui/core";
+import Mercancia from "../Mercancia/Mercancia"
+
 
 class Inicio extends Component{
     

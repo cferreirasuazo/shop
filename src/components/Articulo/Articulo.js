@@ -12,25 +12,10 @@ import Grid from '@material-ui/core/Grid';
 
     
     function Articulo(){
-        let articulos = ['Lorem','ipsum',
-        'sed', 'vitae', 'placerat',
-        'aliquet', 'consequat', 'ut'];
-
-        let cards = articulos.map((articulo)=>{
-            return (
-               <Grid><Card>{articulo}</Card></Grid>
-            )
-        })
+        
 
         return(
-            <Container maxWidth="lg">
-                <Grid className={"grid"} container alignItems="">
-                {
-                    cards
-                }
-                </Grid> 
-               
-            </Container>    
+            <h1>ARTICULO</h1>
         )
     }
 

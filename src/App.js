@@ -8,7 +8,7 @@ import Inicio from "./components/CategoryList/Items/Inicio/Inicio";
 import Nosotros from "./components/CategoryList/Items/Nosotros/Nosotros";
 import Footer from "./components/Footer/Footer";
 import shopping_bag from "./components/Logo/shopping_bag.png";
-import Mercancia from "./components/CategoryList/Items/Mercancia/mercancia";
+import Mercancia from "./components/CategoryList/Items/Mercancia/Mercancia";
 import Articulo from "./components/Articulo/Articulo"
 
 class App extends Component {
@@ -32,7 +32,7 @@ class App extends Component {
             <Route path="/pedidos" />
             <Route path="/categorias" />
             <Route path="/mercancia" component={Mercancia}/>     
-            <Route path="/:nombre" component={Articulo}/>      
+            <Route path="/:nombre" component={Mercancia}/>      
          </Switch>
          <Footer></Footer>
         </BrowserRouter>

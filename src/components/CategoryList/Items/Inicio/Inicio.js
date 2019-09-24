@@ -31,7 +31,7 @@ class Inicio extends Component{
     return (
        <div>
         <h1>{this.props.size}</h1>
-        <Button>Test</Button>
+        <Button onClick ={() => this.props.agregarArticulo("20")}>Test</Button>
         <div>
             <h1>Lorem ipsum dolor sit amet</h1>
 
@@ -52,12 +52,14 @@ class Inicio extends Component{
 
 
 const mapStateToProps = (state) => {
-    console.log(state.length)
     return {
         size:state.length
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({agregarArticulo:agregarArticulo},dispatch)
+}
 
 
-export default connect(mapStateToProps)(Inicio)
+export default connect(mapStateToProps,mapDispatchToProps)(Inicio)

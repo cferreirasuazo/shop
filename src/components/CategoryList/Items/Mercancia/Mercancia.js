@@ -1,10 +1,7 @@
 
 import React, {useState} from "react";
-import {Box,Button,Container, InputLabel, MenuItem, 
+import {Box,Container, InputLabel, MenuItem, 
          FormControl, Select, Card } from "@material-ui/core"
-import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
-
-import Articulo from "../../../Articulo/Articulo";
 
 import "./styles.css";
 import fakeItems from "../../../../fakeItems";

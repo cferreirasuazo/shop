@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import AppBar from "./components/AppBar/AppBar";
 import CategoryList from "./components/CategoryList/CategoryList";
@@ -9,7 +8,6 @@ import Nosotros from "./components/CategoryList/Items/Nosotros/Nosotros";
 import Footer from "./components/Footer/Footer";
 import shopping_bag from "./components/Logo/shopping_bag.png";
 import Mercancia from "./components/CategoryList/Items/Mercancia/Mercancia";
-import Articulo from "./components/Articulo/Articulo"
 
 class App extends Component {
   render() {
@@ -22,7 +20,7 @@ class App extends Component {
       <AppBar/>
       
         <div className="App-header">
-            <img src={shopping_bag} />
+            <img alt={"header"} src={shopping_bag} />
         </div>
         <CategoryList/>
          <Switch>

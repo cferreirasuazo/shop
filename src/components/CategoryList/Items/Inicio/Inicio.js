@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import "./styles.css"
 import { Container, Button } from "@material-ui/core";
 import {connect} from "react-redux";
-import agregarArticulo from "../../../../actions/cartActions";
+import {agregarArticulo} from "../../../../actions/cartActions";
 import { bindActionCreators } from "redux";
 
 class Inicio extends Component{

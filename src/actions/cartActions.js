@@ -10,7 +10,7 @@ export const ELIMINAR_ARTICULO="ELIMINAR_ARTICULO";
 export const FETCH_ARTICULOS="FETCH_ARTICULOS";
 export const LIMPIAR_CARRITO="LIMPIAR_CARRITO";
 
-export default function agregarArticulo(articulo){
+export function agregarArticulo(articulo){
     return {
         type:AGREGAR_ARTICULO,articulo
     }

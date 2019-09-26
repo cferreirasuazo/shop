@@ -3,7 +3,7 @@ import {AGREGAR_ARTICULO,FETCH_ARTICULOS,ELIMINAR_ARTICULO,LIMPIAR_CARRITO} from
 export default function cartReducer (state = [1,2,3,4,5,6,7,8,9,10],action){
     switch(action.type){
         case AGREGAR_ARTICULO:
-            console.log("AGREGAR ARTICULO")
+            state.push(action.articulo)
             return state    
         case ELIMINAR_ARTICULO:
             state.pop();

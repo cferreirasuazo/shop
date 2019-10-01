@@ -1,0 +1,5 @@
+.wrapper{
+    padding:5px;
+    background-color: tomato;
+    display: grid;
+}

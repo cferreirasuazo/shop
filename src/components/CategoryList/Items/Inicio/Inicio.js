@@ -30,6 +30,7 @@ class Inicio extends Component{
 
     return (
        <div>
+
         <h1>{this.props.size}</h1>
         <Button onClick ={() => this.props.agregarArticulo(10)}>Test</Button>
         <div>

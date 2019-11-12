@@ -1,6 +1,9 @@
 import React, {Component} from "react"
-import { Container, Button, Box } from "@material-ui/core";
+import { Container, Button, Box, Card,
+         CardContent, Typography,CardActions } from "@material-ui/core";
 import "./styles.css";
+import items from "../../fakeItems";
+import CarritoObjeto from "../CarritoObjeto/CarritoObjeto"
 
 class Carrito extends Component{
     constructor(props){
@@ -9,13 +12,31 @@ class Carrito extends Component{
 
     render(){
         return (
-            <Container className="wrapper">
-                <p>Shopping Cart</p>
+            <div className="wrapper">
                  <Box className={"inner"}>
-                    <Box className={"list"}>List</Box>
-                    <Box className={"confirmationBox"}>confirmationBox</Box>
+                 <Box>
+                    <div className={"confirmationBox"}>
+                            <div>
+                                <Typography component="p" variant="p" >
+                                    {`Subtotal(${5} items): $${10.50} `}
+                                </Typography>
+                            </div>
+                            <div>
+                                <Button className={"confirmationBtn"}>Hacer Compra</Button>
+                            </div>
+                    </div>
+                    </Box>
+
+
+
+                    <Box className={"list"}>
+                        {items.map((articulo)=>(
+                            <CarritoObjeto articulo = {articulo}/>
+                        ))}
+                    </Box>
+                
                  </Box>
-            </Container>
+            </div>
         )
     }
 

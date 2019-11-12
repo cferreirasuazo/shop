@@ -1,5 +1,33 @@
 .wrapper{
     padding:5px;
-    background-color: tomato;
-    display: grid;
+    display: flex;
+    justify-content: center;
 }
+
+.inner{
+    
+}
+
+.inner > div{
+    margin:5px;
+    border: 1px solid red;
+   
+}
+
+
+.inner .list{
+
+
+}
+
+.inner .confirmationBox{
+   
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+}
+
+
+

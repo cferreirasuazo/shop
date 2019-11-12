@@ -1,0 +1,44 @@
+:root{
+    --size:170px;
+}
+
+
+.card{
+
+    display: flex;
+    margin: 5px;
+}
+
+.card .MuiCardContent-root{
+    width:50vw;
+}
+
+
+.cardContent{
+    border: 1px solid red;
+    background-color: darkgray;
+}
+
+
+.card .cardActions{
+    display: flex;
+    flex-direction: row-reverse
+}
+
+
+.cardMedia{
+    
+    display: flex;
+    background-color: yellow;
+    flex-direction: column;
+    justify-content: center;   
+
+}
+
+.cardPic{
+
+    border:1px solid red;
+    width: var(--size);
+    height: var(--size);
+
+}

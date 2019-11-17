@@ -4,32 +4,25 @@
 
 */
 
+export const ADD_ARTICLE="ADD_ARTICLE";
+export const REMOVE_ARTICLE="REMOVE_ARTICLE";
+export const FETCH_ARTICLES="FETCH_ARTICLES";
+export const CLEAN_CART="CLEAN_CART";
 
-export const AGREGAR_ARTICULO="AGREGAR_ARTICULO";
-export const ELIMINAR_ARTICULO="ELIMINAR_ARTICULO";
-export const FETCH_ARTICULOS="FETCH_ARTICULOS";
-export const LIMPIAR_CARRITO="LIMPIAR_CARRITO";
 
-
-export const agregarArticulo = (articulo) => {
-    return {type:AGREGAR_ARTICULO, articulo }
+export const addArticle = (article) => {
+    return {type:ADD_ARTICLE, article }
 }
 
-// export function agregarArticulo(articulo){
-//     return {
-//         type:AGREGAR_ARTICULO,articulo
-//     }
-// }
-
-export function eliminarArticulo(id){
+export function removeArticle(id){
     return{
-        type:ELIMINAR_ARTICULO,id
+        type:REMOVE_ARTICLE,id
     }
 }
 
-export function limpiarCarrtio(){
+export function cleanCarto(){
     return {
-        type: LIMPIAR_CARRITO
+        type: CLEAN_CART
     }
 }
 

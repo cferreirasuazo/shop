@@ -1,16 +1,11 @@
 import React, { Component } from "react" 
 import {Link} from "react-router-dom";
 import "./styles.css"
-import { Container, Button } from "@material-ui/core";
-import {connect} from "react-redux";
-import {agregarArticulo} from "../../../../actions/cartActions";
-import { bindActionCreators } from "redux";
+import { Container} from "@material-ui/core";
+// import {connect} from "react-redux";
+// import { bindActionCreators } from "redux";
 
 class Inicio extends Component{
-
-    constructor(props){
-        super(props);
-    }
 
     render(){
     
@@ -30,9 +25,6 @@ class Inicio extends Component{
 
     return (
        <div>
-
-        <h1>{this.props.size}</h1>
-        <Button onClick ={() => this.props.agregarArticulo(10)}>Test</Button>
         <div>
             <h1>Lorem ipsum dolor sit amet</h1>
 
@@ -50,17 +42,6 @@ class Inicio extends Component{
 
 
 }
+export default Inicio;
 
-
-const mapStateToProps = (state) => {
-    return {
-        size:state.length
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({agregarArticulo:agregarArticulo},dispatch)
-}
-
-
-export default connect(mapStateToProps,mapDispatchToProps)(Inicio)
+// export default connect(mapStateToProps,mapDispatchToProps)(Inicio)

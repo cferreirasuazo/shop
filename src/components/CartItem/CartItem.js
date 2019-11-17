@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Button, Box, Card,
         CardContent, Typography, CardActions, 
-        CardMedia, CardActionArea } from "@material-ui/core";
+        } from "@material-ui/core";
 import "./styles.css";
 
-const CarritoObjeto = (props) => (
+const CartItem = (props) => (
         <Card className={"card"}>
             <div className={"cardMedia"}>
                 <div  className={"cardPic"}>
@@ -24,4 +24,4 @@ const CarritoObjeto = (props) => (
 
 )
 
-export default CarritoObjeto;
+export default CartItem;

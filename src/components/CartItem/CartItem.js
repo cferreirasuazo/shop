@@ -4,7 +4,7 @@ import { Container, Button, Box, Card,
         CardMedia, CardActionArea } from "@material-ui/core";
 import "./styles.css";
 
-const CarritoObjeto = (props) => (
+const CartItem = (props) => (
         <Card className={"card"}>
             <div className={"cardMedia"}>
                 <div  className={"cardPic"}>
@@ -24,4 +24,4 @@ const CarritoObjeto = (props) => (
 
 )
 
-export default CarritoObjeto;
+export default CartItem;

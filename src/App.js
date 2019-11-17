@@ -8,7 +8,7 @@ import Nosotros from "./components/CategoryList/Items/Nosotros/Nosotros";
 import Footer from "./components/Footer/Footer";
 import shopping_bag from "./components/Logo/shopping_bag.png";
 import Mercancia from "./components/CategoryList/Items/Mercancia/Mercancia";
-import Carrito from "./components/Carrito/Carrito";
+import Cart from "./components/Cart/Cart";
 
 class App extends Component {
   render() {
@@ -27,7 +27,7 @@ class App extends Component {
         <CategoryList/>
          <Switch>
             <Route path="/" exact component={Inicio}  />
-            <Route path="/user/cart" exact component={Carrito} />
+            <Route path="/user/cart" exact component={Cart} />
 
 
             <Route path="/nosotros" component={Nosotros}  />

@@ -2,8 +2,14 @@ import React, {Component} from "react"
 import {Button, Box} from "@material-ui/core";
 import "./styles.css";
 
+import { connect } from 'react-redux';
+import {fetchArticles} from "../../actions/cartActions"
 
 class Cart extends Component{
+
+    componentDidMount(){
+        this.props.fetchArticles()
+    }
 
     render(){
         return (
@@ -22,6 +28,11 @@ class Cart extends Component{
 
 
                     <Box className={"list"}>
+                        {
+                            this.props.items.map((item,key)=>(
+                                <div key={key}>{item.name}</div>
+                            ))
+                        }
                     </Box>
                 
                  </Box>
@@ -31,4 +42,15 @@ class Cart extends Component{
 
 }
 
-export default Cart
+const mapStateToProps = state => ({
+    items: state.articles,
+    arr: state.arr
+})
+
+const mapDispatchToProps = {
+    fetchArticles
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Cart)
+
+

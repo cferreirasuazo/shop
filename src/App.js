@@ -10,6 +10,7 @@ import shopping_bag from "./components/Logo/shopping_bag.png";
 import Mercancia from "./components/CategoryList/Items/Mercancia/Mercancia";
 import Cart from "./components/Cart/Cart";
 
+
 class App extends Component {
   render() {
     

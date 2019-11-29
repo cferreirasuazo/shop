@@ -1,13 +1,23 @@
-/*
-
-    action types
-
-*/
+import axios from "axios";
 
 export const ADD_ARTICLE="ADD_ARTICLE";
 export const REMOVE_ARTICLE="REMOVE_ARTICLE";
 export const FETCH_ARTICLES="FETCH_ARTICLES";
 export const CLEAN_CART="CLEAN_CART";
+
+
+export const fetchArticles = () => {
+    const url = "https://jsonplaceholder.typicode.com/users";
+    return (dispatch) => {
+        axios.get(url)
+            .then((response)=>{
+                dispatch({
+                    type:FETCH_ARTICLES,
+                    payload:response.data
+                })
+            })        
+    }
+}
 
 
 export const addArticle = (article) => {

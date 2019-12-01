@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import {Button, Box} from "@material-ui/core";
 import "./styles.css";
-
+import CartItem from "../CartItem/CartItem";
 import { connect } from 'react-redux';
 import {fetchArticles} from "../../actions/cartActions"
 
@@ -30,7 +30,7 @@ class Cart extends Component{
                     <Box className={"list"}>
                         {
                             this.props.items.map((item,key)=>(
-                                <div key={key}>{item.name}</div>
+                                <CartItem key={key} articulo={item}  />
                             ))
                         }
                     </Box>

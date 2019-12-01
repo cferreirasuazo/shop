@@ -6,8 +6,9 @@ export const FETCH_ARTICLES="FETCH_ARTICLES";
 export const CLEAN_CART="CLEAN_CART";
 
 
+
 export const fetchArticles = () => {
-    const url = "https://jsonplaceholder.typicode.com/users";
+    const url = "http://localhost:4000/api/articles";    
     return (dispatch) => {
         axios.get(url)
             .then((response)=>{

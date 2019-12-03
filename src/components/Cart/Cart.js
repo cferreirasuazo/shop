@@ -44,7 +44,6 @@ class Cart extends Component{
 
 const mapStateToProps = state => ({
     items: state.articles,
-    arr: state.arr
 })
 
 const mapDispatchToProps = {

@@ -1,20 +1,28 @@
-// import React from "react";
-// import {Box,Button,Container, InputLabel, MenuItem, 
-//         FormControl, Select,InputBase, TextField, Card,
-//         CardContent, CardHeader, CardActionArea, Typography  } from "@material-ui/core";
+import React,{Component} from "react";
+class Articulo extends Component{
+    constructor(item){
+        super(item)
+        this.addToCart = this.addToCart.bind(this)
+    }
 
-// function Articulo(){
-//     return(
-//         <Card>
-//             <CardActionArea>
-//                 <CardMedia>
+    addToCart(item){
+        console.log(item)
+    }
 
-//                 </CardMedia>
-//                 <CardContent>
-//                     <Typography>Lorem ipsum dolor sit amet consectetur adipiscing, elit risus diam ridiculus purus vulputate, volutpat nec enim phasellus luctus. Semper pretium porta praesent arcu nulla vestibulum dapibus, dui interdum gravida congue placerat sollicitudin sapien, phasellus tellus platea iaculis a aliquam.</Typography>
-//                 </CardContent>
-//                 <a>Lorem ipsum dolor sit amet consectetur adipiscing, elit risus diam ridiculus</a>
-//             </CardActionArea>
-//         </Card>
-//     )
-// }
+
+
+    render(){
+       return(
+        <div key={this.props.item.codigo} className={"item"}>
+            <p>{this.props.item.nombre}</p>
+            
+            <button onClick={(e) => {this.addToCart(this.props.item)} }>add to cart</button>           
+        </div> 
+       )
+    }
+}
+
+
+
+
+export default Articulo;

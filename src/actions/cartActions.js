@@ -16,6 +16,8 @@ export const fetchArticles = () => {
                     type:FETCH_ARTICLES,
                     payload:response.data
                 })
+            }).catch((err) => {
+                console.log("Cannot Connect")
             })        
     }
 }

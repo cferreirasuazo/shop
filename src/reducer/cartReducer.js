@@ -2,7 +2,7 @@ import {ADD_ARTICLE, REMOVE_ARTICLE,CLEAN_CART,FETCH_ARTICLES} from "../actions/
 
 var initialState = {
     articles:[],
-    arr: [1,2,3,4]
+
 }
 
 export default function cartReducer (state = initialState,action){

@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import {Box,Container, InputLabel, MenuItem, 
          FormControl, Select, Card } from "@material-ui/core"
 
+import Articulo from "./Articulo";
 import "./styles.css";
 import fakeItems from "../../../../fakeItems";
 
@@ -28,7 +29,12 @@ function Mercancia({match}){
         )
     }
 
-    const [list,setList] = useState( fakeItems.map(makeCard))
+
+    const fakeList = fakeItems.map((item,key)=>(
+            <Articulo key={key} item={item} />
+    ))
+
+    const [setList] = useState( )
     const [orden,setOrden] = useState("") 
 
     //Devuelve una Card list nuevo ordenado en orden alfabetico en base del nombre
@@ -108,7 +114,7 @@ function Mercancia({match}){
             </Box> 
             </Box>
            <Box className={"content"}>
-                {list}
+                {fakeList}
            </Box>
        </Container>
     )

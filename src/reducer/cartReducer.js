@@ -1,4 +1,4 @@
-import {ADD_ARTICLE, REMOVE_ARTICLE,CLEAN_CART,FETCH_ARTICLES} from "../actions/cartActions" ;  
+import {ADD_ARTICLE, REMOVE_ARTICLE,CLEAN_CART,FETCH_ARTICLES,ADDTOCART} from "../actions/cartActions" ;  
 
 var initialState = {
     articles:[],
@@ -8,8 +8,7 @@ var initialState = {
 export default function cartReducer (state = initialState,action){
     switch(action.type){
         case ADD_ARTICLE:
-            state.push(action.articulo)
-            return state    
+            return 
         case REMOVE_ARTICLE:
             state.pop();
             return state;
@@ -20,6 +19,12 @@ export default function cartReducer (state = initialState,action){
                 ...state,
                 articles: action.payload
             }
+        case ADDTOCART:
+
+            return {
+                articles:[...state.articles,action.payload]
+            }
+            
         default:
             return state
     }

@@ -1,4 +1,8 @@
 import React,{Component} from "react";
+import {addToCart} from "../../../../actions/cartActions";
+import {connect} from "react-redux";
+import { bindActionCreators } from 'redux'
+
 class Articulo extends Component{
     constructor(item){
         super(item)
@@ -6,7 +10,7 @@ class Articulo extends Component{
     }
 
     addToCart(item){
-        console.log(item)
+        this.props.addToCart(item)
     }
 
 
@@ -23,6 +27,10 @@ class Articulo extends Component{
 }
 
 
+const mapDispatchToProps = {
+    addToCart
+}
 
 
-export default Articulo;
+export default connect(null,mapDispatchToProps)(Articulo)
+

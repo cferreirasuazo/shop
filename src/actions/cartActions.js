@@ -4,7 +4,7 @@ export const ADD_ARTICLE="ADD_ARTICLE";
 export const REMOVE_ARTICLE="REMOVE_ARTICLE";
 export const FETCH_ARTICLES="FETCH_ARTICLES";
 export const CLEAN_CART="CLEAN_CART";
-
+export const ADDTOCART="ADDTOCART";
 
 
 export const fetchArticles = () => {
@@ -26,6 +26,13 @@ export const fetchArticles = () => {
 export const addArticle = (article) => {
     return {type:ADD_ARTICLE, article }
 }
+
+export function addToCart(article){
+    return {
+        type:ADDTOCART,payload:article
+    }
+}
+
 
 export function removeArticle(id){
     return{

@@ -1,4 +1,4 @@
-import axions from "axios";
+import axios from "axios";
 
 export const FETCH_CLIENT="FETCH_CLIENT";
 export const UPDATE_CLIENT="UPDATE_CLIENT";
@@ -21,4 +21,3 @@ export const fetchClient = (id) => {
     }
 }
 
-export const fetchData

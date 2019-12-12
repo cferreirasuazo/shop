@@ -7,12 +7,17 @@ import {Provider} from "react-redux"
 import thunk from "redux-thunk";
 import cartReducer from "../src/reducer/cartReducer";
 import clientReducer from "../src/reducer/clientReducer";
+import {fetchClient} from "../src/actions/clientActions"
+
 
 const middleware = applyMiddleware(thunk)
 
 const rootReducer = combineReducers({client:clientReducer, cart:cartReducer})
 
 const store = createStore(rootReducer,middleware);
+
+store.dispatch(fetchClient("5de2ec86c8aa4442114d1957"))
+
 
 store.subscribe(()=>{
   console.log(store.getState())

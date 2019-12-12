@@ -6,13 +6,16 @@ export const LOGGIN="LOGGIN";
 export const UPDATE_ACCOUNT="UPDATE_ACCOUNT";
 
 
-export const fetchClient = () => {
-    const url = "http://localhost:4000/api/cliente";   
+export const fetchClient = (id) => {
+    const url = `http://localhost:4000/api/cliente/${id}`;   
     return (dispatch) => {
         axios.get(url)
             .then((response)=>{
-
-            }).catch((err)=>{
+                dispatch({
+                    type:FETCH_CLIENT,
+                    payload:response.data[0][0]
+                })
+            }).catch((err)=>{   
                console.log(err) 
             })
     }

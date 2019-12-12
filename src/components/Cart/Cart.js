@@ -42,8 +42,8 @@ class Cart extends Component{
 
 }
 
-const mapStateToProps = state => ({
-    items: state.articles,
+const mapStateToProps = store => ({
+    items: store.cart.articles,
 })
 
 const mapDispatchToProps = {

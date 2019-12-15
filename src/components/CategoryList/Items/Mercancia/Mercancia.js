@@ -4,7 +4,7 @@ import {Box,Container, InputLabel, MenuItem,
          FormControl, Select, Card } from "@material-ui/core"
 
 import Articulo from "./Articulo";
-import "./styles.css";
+import "./styles.css"
 import fakeItems from "../../../../fakeItems";
 
 const lista = ["Chair","Bacon","Computer","Chicken","Soap"].map((item)=>{

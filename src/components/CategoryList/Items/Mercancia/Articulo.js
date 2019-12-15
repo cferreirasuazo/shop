@@ -18,19 +18,12 @@ class Articulo extends Component{
     render(){
        return(
         <div key={this.props.item.codigo} className={"item"}>
-            <p>{this.props.item.nombre}</p>
-            
-            <button onClick={(e) => {this.addToCart(this.props.item)} }>add to cart</button>           
+            <p>{this.props.item.nombre}</p>           
         </div> 
        )
     }
 }
 
 
-const mapDispatchToProps = {
-    addToCart
-}
-
-
-export default connect(null,mapDispatchToProps)(Articulo)
+export default Articulo
 

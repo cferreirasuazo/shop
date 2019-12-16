@@ -17,7 +17,7 @@ export const fetchArticles = () => {
                     payload:response.data
                 })
             }).catch((err) => {
-                console.log("Cannot Connect")
+                console.log(new Error("CatastrophicFailure"))
             })        
     }
 }

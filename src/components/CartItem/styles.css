@@ -1,17 +1,21 @@
 :root{
-    --size:170px;
+    --size:110.5px;
 }
 
 
-.card{
-
+.item{
+    
     display: flex;
     margin: 5px;
+    justify-content: space-around;
+    
 }
 
-.card .MuiCardContent-root{
-    width:50vw;
+.cardInfo{
+    border: 1px solid red;
+    background-color: blue;
 }
+
 
 
 .cardContent{
@@ -20,9 +24,10 @@
 }
 
 
-.card .cardActions{
+.item .cardActions{
     display: flex;
-    flex-direction: row-reverse
+    flex-direction: column;
+    border: 1px solid red;
 }
 
 
@@ -30,8 +35,7 @@
     
     display: flex;
     background-color: yellow;
-    flex-direction: column;
-    justify-content: center;   
+    
 
 }
 
@@ -40,5 +44,5 @@
     border:1px solid red;
     width: var(--size);
     height: var(--size);
-
+    vertical-align: middle;
 }

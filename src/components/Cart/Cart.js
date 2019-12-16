@@ -8,7 +8,7 @@ import {fetchArticles} from "../../actions/cartActions"
 class Cart extends Component{
 
     componentDidMount(){
-        this.props.fetchArticles()
+        //this.props.fetchArticles()
     }
 
     render(){
@@ -43,7 +43,33 @@ class Cart extends Component{
 }
 
 const mapStateToProps = store => ({
-    items: store.cart.articles,
+    items: [
+        {"codigo":"56746574567",
+         "nombre":"lorem ipsum",
+         "categoria":"Juguete",
+         "precio":50
+        },
+        {"codigo":"56746574567",
+         "nombre":"lorem ipsum",
+         "categoria":"Juguete",
+         "precio":50
+        },
+        {"codigo":"56746574567",
+         "nombre":"lorem ipsum",
+         "categoria":"Juguete",
+         "precio":50
+        },
+        {"codigo":"56746574567",
+         "nombre":"lorem ipsum",
+         "categoria":"Juguete",
+         "precio":50
+        },
+        {"codigo":"56746574567",
+         "nombre":"lorem ipsum",
+         "categoria":"Juguete",
+         "precio":50
+        }
+    ],
 })
 
 const mapDispatchToProps = {

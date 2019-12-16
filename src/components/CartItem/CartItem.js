@@ -5,23 +5,25 @@ import { Button, Card,
 import "./styles.css";
 
 const CartItem = (props) => (
-        <Card className={"card"}>
+        <div className={"item"}>
             <div className={"cardMedia"}>
                 <div  className={"cardPic"}>
 
                 </div>
             </div>
-            <CardContent>
+            <div className={"cardInfo"}>
                 <Typography>{props.articulo.codigo} </Typography>
                 <Typography>{props.articulo.nombre}</Typography>
                 <Typography>{props.articulo.categoria}</Typography>
                 <Typography>{props.articulo.precio}</Typography>
-                <CardActions className={"cardActions"} >
+            </div>    
+            <div className={"cardActions"} >
+                <input value={1} size={1}/>
+                <Button>Update</Button> 
                 <Button>Delete</Button> 
-                </CardActions>
-            </CardContent>           
-        </Card>
-
+            </div>       
+            
+        </div>
 )
 
 export default CartItem;

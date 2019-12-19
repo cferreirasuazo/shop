@@ -11,6 +11,14 @@ class Cart extends Component{
         //this.props.fetchArticles()
     }
 
+    handleDelete(id){
+        console.log(id)
+    }
+    
+    handleUpdate(){
+        console.log()
+    }
+
     render(){
         return (
             <div className="wrapper">
@@ -29,8 +37,8 @@ class Cart extends Component{
 
                     <Box className={"list"}>
                         {
-                            this.props.items.map((item,key)=>(
-                                <CartItem key={key} articulo={item}  />
+                            this.props.tems.map((item,key)=>(
+                                <CartItem key={key} articulo={item} handleDelete={this.handleDelete} />
                             ))
                         }
                     </Box>
@@ -43,33 +51,7 @@ class Cart extends Component{
 }
 
 const mapStateToProps = store => ({
-    items: [
-        {"codigo":"56746574567",
-         "nombre":"lorem ipsum",
-         "categoria":"Juguete",
-         "precio":50
-        },
-        {"codigo":"56746574567",
-         "nombre":"lorem ipsum",
-         "categoria":"Juguete",
-         "precio":50
-        },
-        {"codigo":"56746574567",
-         "nombre":"lorem ipsum",
-         "categoria":"Juguete",
-         "precio":50
-        },
-        {"codigo":"56746574567",
-         "nombre":"lorem ipsum",
-         "categoria":"Juguete",
-         "precio":50
-        },
-        {"codigo":"56746574567",
-         "nombre":"lorem ipsum",
-         "categoria":"Juguete",
-         "precio":50
-        }
-    ],
+    items: store.cart.articles
 })
 
 const mapDispatchToProps = {

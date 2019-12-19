@@ -1,7 +1,24 @@
 import {ADD_ARTICLE, REMOVE_ARTICLE,CLEAN_CART,FETCH_ARTICLES,ADDTOCART} from "../actions/cartActions" ;  
 
 var initialState = {
-    articles:[],
+    articles:[
+        {
+            "codigo":"123456789",
+            "nombre":"Qwerty"
+        },
+        {
+            "codigo":"234567891",
+            "nombre":"Moldecai"
+        },
+        {
+            "codigo":"asdfghjkl",
+            "nombre":"ZXCVB"
+        },
+        {
+            "codigo":"987654321",
+            "nombre":"FGHJKL"
+        }
+    ],
 
 }
 

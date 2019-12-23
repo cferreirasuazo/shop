@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const ADD_ARTICLE="ADD_ARTICLE";
-export const REMOVE_ARTICLE="REMOVE_ARTICLE";
+export const DELETE_ARTICLE="DELETE_ARTICLE";
 export const FETCH_ARTICLES="FETCH_ARTICLES";
 export const CLEAN_CART="CLEAN_CART";
 export const ADDTOCART="ADDTOCART";
@@ -34,13 +34,14 @@ export function addToCart(article){
 }
 
 
-export function removeArticle(id){
+export const deleteArticle = (codigo) => {
     return{
-        type:REMOVE_ARTICLE,id
+        type:DELETE_ARTICLE,
+        payload:codigo
     }
 }
 
-export function cleanCarto(){
+export function cleanCart(){
     return {
         type: CLEAN_CART
     }

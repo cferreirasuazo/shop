@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react';
-import { Button, Card,
-        CardContent, Typography, CardActions, 
+import { Button, Typography 
         } from "@material-ui/core";
 import "./styles.css";
 
@@ -25,9 +24,9 @@ const CartItem = (props) => {
             <Typography>{props.articulo.precio}</Typography>
         </div>    
         <div className={"cardActions"} >
-            <input value={1} size={1}/>
+           
             <Button>Update</Button> 
-            <Button onClick={()=>{onDelete(props.articulo.codigo)}}>Delete</Button> 
+            <Button onClick={()=>{onDelete(props.articulo._id)}}>Delete</Button> 
         </div>       
         
     </div>

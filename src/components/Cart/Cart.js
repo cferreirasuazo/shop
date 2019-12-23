@@ -3,20 +3,30 @@ import {Button, Box} from "@material-ui/core";
 import "./styles.css";
 import CartItem from "../CartItem/CartItem";
 import { connect } from 'react-redux';
-import {fetchArticles} from "../../actions/cartActions"
+import {fetchArticles,deleteArticle} from "../../actions/cartActions"
 
 class Cart extends Component{
+    constructor(props){
+        super(props)
+        this.handleDelete = this.handleDelete.bind(this)
+      
+        
+    }
 
     componentDidMount(){
         //this.props.fetchArticles()
+        
     }
 
     handleDelete(id){
-        console.log(id)
+        this.props.deleteArticle(id)
+        
     }
     
-    handleUpdate(){
-        console.log()
+    getSubtotal(articles){
+       var subtotal = articles.reduce((acum,value)=> acum + value.precio,0)
+       return subtotal
+       
     }
 
     render(){
@@ -26,7 +36,7 @@ class Cart extends Component{
                  <Box>
                     <div className={"confirmationBox"}>
                             <div>
-                                <p> {`Subtotal(${5} items): $${10.50} `}</p>
+                                <p> {`Subtotal(${this.props.length} items): $${this.getSubtotal(this.props.items)} `}</p>
                             </div>
                             <div>
                                 <Button className={"confirmationBtn"}>Hacer Compra</Button>
@@ -37,7 +47,7 @@ class Cart extends Component{
 
                     <Box className={"list"}>
                         {
-                            this.props.tems.map((item,key)=>(
+                            this.props.items.map((item,key)=>(
                                 <CartItem key={key} articulo={item} handleDelete={this.handleDelete} />
                             ))
                         }
@@ -51,11 +61,14 @@ class Cart extends Component{
 }
 
 const mapStateToProps = store => ({
-    items: store.cart.articles
+    items: store.cart.articles,
+    length: store.cart.articles.length
+
 })
 
 const mapDispatchToProps = {
-    fetchArticles
+    fetchArticles,
+    deleteArticle
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Cart)

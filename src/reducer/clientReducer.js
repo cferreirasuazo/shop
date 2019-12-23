@@ -1,4 +1,4 @@
-import {fetchClient,FETCH_CLIENT} from "../actions/clientActions";
+import {FETCH_CLIENT} from "../actions/clientActions";
 
 var initialState = {
     client:{}

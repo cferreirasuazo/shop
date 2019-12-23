@@ -1,7 +1,5 @@
 import React,{Component} from "react";
-import {addToCart} from "../../../../actions/cartActions";
-import {connect} from "react-redux";
-import { bindActionCreators } from 'redux'
+
 
 class Articulo extends Component{
     constructor(item){

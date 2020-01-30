@@ -1,11 +1,13 @@
 
-import React, {useState} from "react";
+import React, {useState,useEffect } from "react";
 import {Box,Container, InputLabel, MenuItem, 
          FormControl, Select, Card } from "@material-ui/core"
 
 import Articulo from "./Articulo";
 import "./styles.css"
 import fakeItems from "../../../../fakeItems";
+import axios from "axios";
+
 
 const lista = ["Chair","Bacon","Computer","Chicken","Soap"].map((item)=>{
     return(
@@ -19,7 +21,8 @@ const ordenar = ["a-z","z-a","menor-mayor","mayor-menor"].map((item)=>{
 })
 
 function Mercancia({match}){
-
+    const categoriaUrl = match.params.nombre;
+   
     const makeCard = (item) =>{
         return(
             <Card key={item.codigo} className={"item"}>

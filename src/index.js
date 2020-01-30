@@ -16,9 +16,6 @@ const rootReducer = combineReducers({client:clientReducer, cart:cartReducer})
 
 const store = createStore(rootReducer,middleware);
 
-store.dispatch(fetchClient("5de2ec86c8aa4442114d1957"))
-
-
 store.subscribe(()=>{
   console.log(store.getState())
 } )

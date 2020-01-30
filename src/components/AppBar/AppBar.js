@@ -14,6 +14,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
+import {Link} from "react-router-dom"
 
 
 
@@ -163,14 +164,13 @@ function PrimarySearchAppBar() {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+          <AccountCircle></AccountCircle>
         </IconButton>
         <p>Profile</p>
       </MenuItem>
       <MenuItem>
           <IconButton>
             <ShoppingCart></ShoppingCart>
-
           </IconButton>
       </MenuItem>
 
@@ -214,6 +214,7 @@ function PrimarySearchAppBar() {
             </IconButton>
             <IconButton>
               <ShoppingCart></ShoppingCart>
+              <Link to={"/user/profile"}>Profile</Link>
             </IconButton> 
           </div>
           <div className={classes.sectionMobile}>

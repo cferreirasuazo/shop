@@ -1,0 +1,28 @@
+.account-item {
+    border: 1px solid red;   
+    width:400px;
+}
+
+.account-item .title{
+    font-size:25px;
+    
+}
+
+.account-item .list{
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+
+.account-item .list .list-item{
+    width: 370px;
+    border: 1px solid red;
+    margin-bottom: 5px;
+}
+

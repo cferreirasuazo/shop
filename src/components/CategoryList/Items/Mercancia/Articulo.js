@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-
+import {Link} from "react-router-dom";
 
 class Articulo extends Component{
     constructor(item){
@@ -15,8 +15,8 @@ class Articulo extends Component{
 
     render(){
        return(
-        <div key={this.props.item.codigo} className={"item"}>
-            <p>{this.props.item.nombre}</p>           
+        <div key={this.props.item._id} className={"item"}>
+                <Link to={`/articulo/${this.props.item.codigo}`}>{this.props.item.nombre}</Link>          
         </div> 
        )
     }

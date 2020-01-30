@@ -9,7 +9,8 @@ import Footer from "./components/Footer/Footer";
 import shopping_bag from "./components/Logo/shopping_bag.png";
 import Mercancia from "./components/CategoryList/Items/Mercancia/Mercancia";
 import Cart from "./components/Cart/Cart";
-
+import Profile from "./components/Profile/Profile"
+import Articulo from "./components/Articulo/Articulo";
 
 class App extends Component {
   render() {
@@ -18,26 +19,21 @@ class App extends Component {
       
      
       <div className="App">
+        
       <BrowserRouter>
       <AppBar/>
-      
-        <div className="App-header">
-            <img alt={"header"} src={shopping_bag} />
-        </div>
-        <Link to={"/user/cart"}>Default</Link>
         <CategoryList/>
          <Switch>
             <Route path="/" exact component={Inicio}  />
             <Route path="/user/cart" exact component={Cart} />
-
-
+            <Route path="/user/profile" component={Profile} />
             <Route path="/nosotros" component={Nosotros}  />
             <Route path="/ofertas" />
             <Route path="/pedidos" />
             <Route path="/categorias" />
             <Route path="/mercancia" component={Mercancia}/>     
-            <Route path="/:nombre" component={Mercancia}/>      
-     
+            <Route path="/:nombre" exact component={Mercancia}/> 
+            <Route path="/articulo/:id" exact render={() => <Articulo/> }/>
          </Switch>
          <Footer></Footer>
         </BrowserRouter>

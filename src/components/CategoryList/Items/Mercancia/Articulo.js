@@ -15,9 +15,13 @@ class Articulo extends Component{
 
     render(){
        return(
-        <div key={this.props.item._id} className={"item"}>
-                <Link to={`/articulo/${this.props.item.codigo}`}>{this.props.item.nombre}</Link>          
-        </div> 
+        <Link to={{
+            pathname: `/articulo/${this.props.item._id}`,
+            articulo: this.props.item
+        }}>
+            <h1>{this.props.item.nombre}</h1>
+            <p>{this.props.item.precio}</p>
+        </Link> 
        )
     }
 }

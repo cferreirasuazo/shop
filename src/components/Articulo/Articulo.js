@@ -4,8 +4,9 @@ import {withRouter} from "react-router-dom"
 import {Container, Button} from "@material-ui/core";
 
 
-    function Articulo({match}){
-        
+    function Articulo({match,location,props}){
+        const articuloId = match.params.nombre;
+        console.log(props);
     
         return(
             <Container>

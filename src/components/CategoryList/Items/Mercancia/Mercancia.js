@@ -22,7 +22,17 @@ const ordenar = ["a-z","z-a","menor-mayor","mayor-menor"].map((item)=>{
 
 function Mercancia({match}){
     const categoriaUrl = match.params.nombre;
-   
+    const [articulos,setArticulos] = useState([]);
+    useEffect(()=>{
+        const url = `http://localhost:4000/api/article/${categoriaUrl}`;
+        console.log(url)
+        axios.get(url).then((req)=>{
+            setArticulos(req.data)
+        })
+    },[])
+
+
+
     const makeCard = (item) =>{
         return(
             <Card key={item.codigo} className={"item"}>
@@ -33,7 +43,7 @@ function Mercancia({match}){
     }
 
 
-    const fakeList = fakeItems.map((item,key)=>(
+    const fakeList = articulos.map((item,key)=>(
             <Articulo key={key} item={item} />
     ))
 

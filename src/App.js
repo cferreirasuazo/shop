@@ -11,7 +11,7 @@ import Mercancia from "./components/CategoryList/Items/Mercancia/Mercancia";
 import Cart from "./components/Cart/Cart";
 import Profile from "./components/Profile/Profile"
 import Articulo from "./components/Articulo/Articulo";
-
+import Login from "./components/Login/Login";
 class App extends Component {
   render() {
     
@@ -19,7 +19,6 @@ class App extends Component {
       
      
       <div className="App">
-        
       <BrowserRouter>
       <AppBar/>
         <CategoryList/>
@@ -27,6 +26,7 @@ class App extends Component {
             <Route path="/" exact component={Inicio}  />
             <Route path="/user/cart" exact component={Cart} />
             <Route path="/user/profile" component={Profile} />
+            <Route path="/user/login" component={Login} />
             <Route path="/nosotros" component={Nosotros}  />
             <Route path="/ofertas" />
             <Route path="/pedidos" />

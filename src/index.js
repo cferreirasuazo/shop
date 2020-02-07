@@ -16,6 +16,11 @@ const rootReducer = combineReducers({client:clientReducer, cart:cartReducer})
 
 const store = createStore(rootReducer,middleware);
 
+var cliente = {
+  correo:"kyloren@mail.com",
+  password:"kyloren"
+}
+
 store.subscribe(()=>{
   console.log(store.getState())
 } )

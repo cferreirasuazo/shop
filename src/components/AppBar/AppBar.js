@@ -16,10 +16,6 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import {Link} from "react-router-dom"
 
-
-
-
-
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
@@ -214,7 +210,8 @@ function PrimarySearchAppBar() {
             </IconButton>
             <IconButton>
               <ShoppingCart></ShoppingCart>
-              <Link to={"/user/profile"}>Profile</Link>
+              <Link to={"/user/login"}>Login</Link>
+              <Link to={"/user/profile"}>profile</Link>
             </IconButton> 
           </div>
           <div className={classes.sectionMobile}>

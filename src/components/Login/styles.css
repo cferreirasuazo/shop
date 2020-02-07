@@ -1,0 +1,13 @@
+.login-wrapper{
+    border: 1px solid red;
+    width: 500px;
+    height: 190px;
+}
+
+.login-input{
+    width:200px;
+}
+
+.login-button{
+    width:275px;
+}

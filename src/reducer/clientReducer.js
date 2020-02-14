@@ -1,7 +1,8 @@
-import {FETCH_CLIENT} from "../actions/clientActions";
+import {FETCH_CLIENT,SET_LOG} from "../actions/clientActions";
 
 var initialState = {
-    client:{}
+    client: {},
+    islogged: false 
 }
 
 
@@ -10,6 +11,11 @@ export default function clintReducer(state = initialState,action){
         case FETCH_CLIENT:
             return{
                 ...state,client:action.payload
+            }
+        case SET_LOG:
+            console.log(action.payload)
+            return{
+                ...state,islogged:action.payload
             }
         default:
             return state

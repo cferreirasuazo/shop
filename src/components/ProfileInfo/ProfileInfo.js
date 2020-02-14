@@ -10,7 +10,7 @@ const ProfileInfo = (props) => {
          <p>{props.cliente.apellido}</p>
          <p>{props.cliente.usuario}</p>
          <p>{props.cliente.correo}</p>
-         
+         <p>{props.islogged}</p>
     </Box>
     )
 }
@@ -18,7 +18,8 @@ const ProfileInfo = (props) => {
 
 
 const mapStateToProps = store =>({
-    cliente:store.client.client
+    cliente:store.client.client,
+    islogged:store.client.islogged
 })
 
 export default connect(mapStateToProps, null)(ProfileInfo);

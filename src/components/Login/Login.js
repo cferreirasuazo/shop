@@ -3,6 +3,7 @@ import withRouter from "react-router-dom";
 import {Container, Box, Button, TextField} from  "@material-ui/core";
 import {connect} from "react-redux";
 import {fetchClient} from "../../actions/clientActions";
+import ProfileInfo from "../ProfileInfo/ProfileInfo"
 import "./styles.css";
 
 const Login = (props) => {
@@ -21,20 +22,22 @@ const Login = (props) => {
 
     function getCredentials(){
         var cliente = {
-            correo: username,
-            password: password
+            correo: "kyloren@mail.com",
+            password: "kyloren"
         }   
-        console.log(props.fetchClient(cliente))
+        props.fetchClient(cliente);
         
         
     }
 
     return (
+        <div>
         <Box className={"login-wrapper"} display="flex" flexDirection="column" alignItems="center">
             <TextField className={"login-input"} onChange={_handlerChange} required id="login-username" label="Username"  />
             <TextField className={"login-input"} onChange={_handlerChange} required id="login-password" label="Password"  />
             <Button onClick={getCredentials} className={"login-button"}>Login</Button>
         </Box>
+        </div>  
     )
 }
 

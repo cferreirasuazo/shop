@@ -3,9 +3,10 @@ export const FETCH_CLIENT="FETCH_CLIENT";
 export const UPDATE_CLIENT="UPDATE_CLIENT";
 export const LOGGIN="LOGGIN";
 export const UPDATE_ACCOUNT="UPDATE_ACCOUNT";
+export const IS_LOGGED="IS_LOGGED";
+export const NOT_LOGGED="NOT_LOGGED";
+export const SET_LOG="SET_LOG"
 import {FETCH_ARTICLES} from "./cartActions";
-
-
 
 export const fetchClient = (cliente) => {
     var bodyFormData = new FormData()
@@ -22,6 +23,10 @@ export const fetchClient = (cliente) => {
                dispatch({
                    type:FETCH_ARTICLES,
                    payload:response.data.articulos
+               });
+               dispatch({
+                   type:SET_LOG,
+                   payload:true
                })
             }).catch((err)=>{   
                console.log(err) 

@@ -15,6 +15,24 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import {Link} from "react-router-dom"
+import {ProfileInfo} from "../ProfileInfo/ProfileInfo"
+import { connect } from 'react-redux';
+
+
+
+
+const LinkLogin = () =>{
+  return (
+    <Link to="/user/login">LOGIN</Link>
+  )
+}
+
+const LinkProfile = (props) => {
+  
+  return (
+    <Link to="/user/profile">PROFILE</Link>
+  )
+}
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -85,7 +103,7 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-function PrimarySearchAppBar() {
+function PrimarySearchAppBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -210,8 +228,9 @@ function PrimarySearchAppBar() {
             </IconButton>
             <IconButton>
               <ShoppingCart></ShoppingCart>
-              <Link to={"/user/login"}>Login</Link>
-              <Link to={"/user/profile"}>profile</Link>
+              {
+                !!props.islogged ? <LinkProfile></LinkProfile> : <LinkLogin></LinkLogin> 
+              }
             </IconButton> 
           </div>
           <div className={classes.sectionMobile}>
@@ -236,4 +255,9 @@ function PrimarySearchAppBar() {
   );
 }
 
-export default PrimarySearchAppBar;
+const mapStateToProps = store =>({
+    islogged: store.client.islogged
+})
+
+export default connect(mapStateToProps,null)(PrimarySearchAppBar)
+

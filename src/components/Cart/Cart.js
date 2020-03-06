@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import {Button, Box} from "@material-ui/core";
+import {Button, Box, Container} from "@material-ui/core";
 import "./styles.css";
 import CartItem from "../CartItem/CartItem";
 import { connect } from 'react-redux';
@@ -19,6 +19,7 @@ class Cart extends Component{
     }
 
     handleDelete(id){
+        console.log("handleDelete")
         this.props.deleteArticle(id)
         
     }
@@ -31,7 +32,7 @@ class Cart extends Component{
 
     render(){
         return (
-            <div className="wrapper">
+            <Container className="wrapper">
                  <Box className={"inner"}>
                  <Box>
                     <div className={"confirmationBox"}>
@@ -54,7 +55,7 @@ class Cart extends Component{
                     </Box>
                 
                  </Box>
-            </div>
+            </Container>
         )
     }
 

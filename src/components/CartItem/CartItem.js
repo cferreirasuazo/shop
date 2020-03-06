@@ -1,5 +1,5 @@
-import React, { useCallback } from 'react';
-import { Button, Typography 
+import React, { useCallback, useEffect } from 'react';
+import { Button, Typography, Paper
         } from "@material-ui/core";
 import "./styles.css";
 
@@ -9,27 +9,22 @@ const CartItem = (props) => {
         props.handleDelete(id)
     })
 
+    var {articulo} = props.articulo
 
     return (
-        <div className={"item"}>
-        <div className={"cardMedia"}>
-            <div  className={"cardPic"}>
-
-            </div>
-        </div>
-        <div className={"cardInfo"}>
-            <Typography>{props.articulo.codigo} </Typography>
-            <Typography>{props.articulo.nombre}</Typography>
-            <Typography>{props.articulo.categoria}</Typography>
-            <Typography>{props.articulo.precio}</Typography>
-        </div>    
-        <div className={"cardActions"} >
-           
-            <Button>Update</Button> 
-            <Button onClick={()=>{onDelete(props.articulo._id)}}>Delete</Button> 
-        </div>       
-        
-    </div>
+        <Paper>
+            <div>
+                <Typography>{articulo.nombre}</Typography>
+                <Typography>{articulo.descripcion}</Typography>
+                <Typography>{articulo.precio}</Typography>
+                <Typography>{props.articulo.cantidad}</Typography>
+            </div>    
+            <div>
+                <Button>Update</Button> 
+                <Button onClick={()=>{onDelete(props.articulo._id)}}>Delete</Button> 
+            </div>    
+            <Button>Checkout</Button>   
+        </Paper>
     )
    
     }

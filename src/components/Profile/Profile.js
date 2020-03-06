@@ -1,15 +1,16 @@
 import React from "react";
 import Box from '@material-ui/core/Box';
-import "./index.css"
+import Link from "react-router-dom/Link";
+import "./index.css";
 
-import ProfileInfo from "../ProfileInfo/ProfileInfo";
 
 const Profile = () => (
-   <Box className={"wrapper"}>
+   <Box className={"profile-box"}  display="flex" flexDirection="column">
+       <Box>
        <Box className={"account-item"}>
            <h1 className={"title"}><i className="fa fa-user-circle" aria-hidden="true"></i> My Account</h1>
            <ul className={"list"}>
-                <li className={"list-item"}>Edit user account</li>
+                <li className={"list-item"}><Link to={"/user/profileinfo"}>Change Profile Info</Link></li>
                 <li className={"list-item"}>Change your password</li>
                 <li className={"list-item"}>Modify your address entries</li>
            </ul>
@@ -31,8 +32,10 @@ const Profile = () => (
            </ul>
        </Box>
 
+        
 
-        <ProfileInfo/>
+       </Box>
+       
 
    </Box>
 )

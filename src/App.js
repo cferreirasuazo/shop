@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import './App.css';
 import AppBar from "./components/AppBar/AppBar";
 import CategoryList from "./components/CategoryList/CategoryList";
-import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+import {Switch, Route,Router} from 'react-router-dom';
 import Inicio from "./components/CategoryList/Items/Inicio/Inicio";
 import Nosotros from "./components/CategoryList/Items/Nosotros/Nosotros";
 import Footer from "./components/Footer/Footer";
-import shopping_bag from "./components/Logo/shopping_bag.png";
 import Mercancia from "./components/CategoryList/Items/Mercancia/Mercancia";
 import Cart from "./components/Cart/Cart";
 import Profile from "./components/Profile/Profile"
 import Articulo from "./components/Articulo/Articulo";
 import Login from "./components/Login/Login";
+import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
+import {history} from "../src/utils/history";
+import Register from "./components/Register/Register";
+
 class App extends Component {
   render() {
     
@@ -19,14 +22,18 @@ class App extends Component {
       
      
       <div className="App">
-      <BrowserRouter>
+      
+      <Router history={history} >
       <AppBar/>
         <CategoryList/>
-         <Switch>
+         <Switch  >
             <Route path="/" exact component={Inicio}  />
             <Route path="/user/cart" exact component={Cart} />
             <Route path="/user/profile" component={Profile} />
+            <Route path="/user/profileinfo" exact component={ProfileInfo} />
             <Route path="/user/login" component={Login} />
+            <Route path="/user/register" component={Register} />
+          
             <Route path="/nosotros" component={Nosotros}  />
             <Route path="/ofertas" />
             <Route path="/pedidos" />
@@ -36,7 +43,7 @@ class App extends Component {
             <Route path="/articulo/:id" exact render={() => <Articulo/> }/>
          </Switch>
          <Footer></Footer>
-        </BrowserRouter>
+        </Router>
        
       </div>
      

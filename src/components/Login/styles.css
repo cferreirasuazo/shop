@@ -1,7 +1,15 @@
+.login-box{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+
 .login-wrapper{
     border: 1px solid red;
     width: 500px;
     height: 190px;
+    margin-right: 10px;
 }
 
 .login-input{
@@ -10,4 +18,9 @@
 
 .login-button{
     width:275px;
+}
+
+.new-account-pop{
+    padding: 10px;
+    border: 1px solid red;
 }

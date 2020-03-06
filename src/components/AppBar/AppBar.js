@@ -15,12 +15,11 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import {Link} from "react-router-dom"
-import {ProfileInfo} from "../ProfileInfo/ProfileInfo"
 import { connect } from 'react-redux';
+import {history} from "../../utils/history";
 
-
-
-
+const redirectTo = (url) =>( history.push(url) )
+      
 const LinkLogin = () =>{
   return (
     <Link to="/user/login">LOGIN</Link>
@@ -217,20 +216,25 @@ function PrimarySearchAppBar(props) {
               </Badge>
             </IconButton>
             <IconButton
-              edge="end"
-              aria-label="Account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
+              // edge="end"
+              // aria-label="Account of current user"
+              // aria-controls={menuId}
+              // aria-haspopup="true"
+              // onClick={handleProfileMenuOpen}
+               color="inherit"
+               onClick={() => (redirectTo("/user/profile")) }
             >
-              <AccountCircle />
+             
+              <AccountCircle></AccountCircle>
             </IconButton>
-            <IconButton>
+            <IconButton
+              color="inherit"
+              onClick={() => (redirectTo("/user/cart")) }
+              >
               <ShoppingCart></ShoppingCart>
-              {
+              {/* {
                 !!props.islogged ? <LinkProfile></LinkProfile> : <LinkLogin></LinkLogin> 
-              }
+              } */}
             </IconButton> 
           </div>
           <div className={classes.sectionMobile}>

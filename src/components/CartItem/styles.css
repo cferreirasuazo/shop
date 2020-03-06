@@ -1,48 +1,15 @@
-:root{
-    --size:110.5px;
-}
+/*
+article
+
+article__picture
+
+article__info
+
+article__actions
+
+article__btn_delete
+
+article__btn_update
 
 
-.item{
-    
-    display: flex;
-    margin: 5px;
-    justify-content: space-around;
-    
-}
-
-.cardInfo{
-    border: 1px solid red;
-    background-color: blue;
-}
-
-
-
-.cardContent{
-    border: 1px solid red;
-    background-color: darkgray;
-}
-
-
-.item .cardActions{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid red;
-}
-
-
-.cardMedia{
-    
-    display: flex;
-    background-color: yellow;
-    
-
-}
-
-.cardPic{
-
-    border:1px solid red;
-    width: var(--size);
-    height: var(--size);
-    vertical-align: middle;
-}
+*/

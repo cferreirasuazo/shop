@@ -7,8 +7,7 @@ import {Provider} from "react-redux"
 import thunk from "redux-thunk";
 import cartReducer from "../src/reducer/cartReducer";
 import clientReducer from "../src/reducer/clientReducer";
-import {fetchClient} from "../src/actions/clientActions"
-
+//import {fetchClient} from "../src/actions/clientActions"
 
 const middleware = applyMiddleware(thunk)
 
@@ -16,15 +15,9 @@ const rootReducer = combineReducers({client:clientReducer, cart:cartReducer})
 
 const store = createStore(rootReducer,middleware);
 
-var cliente = {
-  correo:"kyloren@mail.com",
-  password:"kyloren"
-}
-
 store.subscribe(()=>{
   console.log(store.getState())
 } )
-
 
 ReactDOM.render(
   <Provider store={store}> 

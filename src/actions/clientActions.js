@@ -9,7 +9,6 @@ export const SET_LOG="SET_LOG"
 import {FETCH_ARTICLES} from "./cartActions";
 
 export const fetchClient = (cliente) => {
-    var bodyFormData = new FormData()
     
     const url = `http://localhost:4000/api/login`;   
     return (dispatch) => {

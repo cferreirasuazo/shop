@@ -1,10 +1,10 @@
-import React, {useEffect} from "react";
+import React from "react";
 import "./styles.css";
 import {withRouter} from "react-router-dom"
 import {Container, Button} from "@material-ui/core";
 
 
-    function Articulo({match,location,props}){
+    function Articulo({match,props}){
         const articuloId = match.params.nombre;
         console.log(props);
     

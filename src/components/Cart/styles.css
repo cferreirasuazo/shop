@@ -1,23 +1,4 @@
-.wrapper{
-    padding:5px;
-    width:875px;
-}
 
-.inner{
-    
-}
-
-.inner > div{
-    margin:5px;
-    border: 1px solid red;
-   
-}
-
-
-.inner .list{
-
-
-}
 
 .inner .confirmationBox{
    

@@ -15,7 +15,8 @@ class Inicio extends Component{
     constructor(props){
         super(props)
         this.state = {
-            categorias:[]
+            categorias:[],
+            isLoading:true
         }
 
     }
@@ -24,6 +25,7 @@ class Inicio extends Component{
         const url = "http://localhost:4000/api/categorias";
         axios.get(url).then((data)=>{
             this.setState({categorias:data.data})
+            this.setState({isLoading:false})
         })
             
     }
@@ -47,15 +49,12 @@ class Inicio extends Component{
 
     return (
        <div>
-           <Login/>
-
-
         <div>
             <h1>Lorem ipsum dolor sit amet</h1>
 
             <Container className="container">
                 {
-                    links
+                    this.state.isLoading ? <h1>It's fetching</h1> : links
                 }
             </Container> 
 

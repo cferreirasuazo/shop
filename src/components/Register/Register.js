@@ -7,8 +7,6 @@ import { Button} from '@material-ui/core';
 import { TextField } from 'formik-material-ui';
 import "./styles.css"
 
-
-
 const Register = () =>{
     return (
         <Container className={"register-box"}>
@@ -19,7 +17,7 @@ const Register = () =>{
                     password: '',
                 }}
             validate={values => {
-    const errors: Partial<Values> = {};
+    const errors = {};
     if (!values.email) {
       errors.email = 'Required';
     } else if (
@@ -38,7 +36,7 @@ const Register = () =>{
 >
   {({ submitForm, isSubmitting }) => (
     <Form>
-    <h1>Your</h1>
+    <h1>Your Personal Information</h1>
       <Box>
       <Field 
         component={TextField}

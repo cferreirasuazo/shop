@@ -1,12 +1,12 @@
-.root{
-    
-    background-color:gold;
-    margin: auto;
+.articulo-box{
     padding: 10px;
 }
 
-.grid{
-    border:1px solid blue;
-    
+.articulo-box__actions{
+   
+  
 }
 
+.articulo-box__actions .articulo-box__btn{
+    background-color: yellow
+}

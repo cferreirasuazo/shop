@@ -28,6 +28,7 @@ function Mercancia({match}){
         console.log(url)
         axios.get(url).then((req)=>{
             setArticulos(req.data)
+            setLoadingState(false)
         })
     },[])
 
@@ -47,8 +48,9 @@ function Mercancia({match}){
             <Articulo key={key} item={item} />
     ))
 
-    const [setList] = useState( )
-    const [orden,setOrden] = useState("") 
+    const [setList] = useState();
+    const [isLoading,setLoadingState] = useState(true);
+    const [orden,setOrden] = useState("");
 
     //Devuelve una Card list nuevo ordenado en orden alfabetico en base del nombre
     function nuevoOrden(orden){
@@ -100,7 +102,11 @@ function Mercancia({match}){
 
     return (
        <Container className={"wrapper"}>
-           <Box className="buscador">               
+        {
+            isLoading ? 
+            <h1>Fetching Mercancia</h1>
+            :<div>
+                             <Box className="buscador">               
            <Box>
                <h1 className={""} >Mercancia disponible</h1>
            </Box>
@@ -129,6 +135,9 @@ function Mercancia({match}){
            <Box className={"content"}>
                 {fakeList}
            </Box>
+            </div>
+             
+        }
        </Container>
     )
 }

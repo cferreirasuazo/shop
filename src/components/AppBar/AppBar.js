@@ -216,11 +216,6 @@ function PrimarySearchAppBar(props) {
               </Badge>
             </IconButton>
             <IconButton
-              // edge="end"
-              // aria-label="Account of current user"
-              // aria-controls={menuId}
-              // aria-haspopup="true"
-              // onClick={handleProfileMenuOpen}
                color="inherit"
                onClick={() => (redirectTo("/user/profile")) }
             >
@@ -232,10 +227,12 @@ function PrimarySearchAppBar(props) {
               onClick={() => (redirectTo("/user/cart")) }
               >
               <ShoppingCart></ShoppingCart>
-              {/* {
-                !!props.islogged ? <LinkProfile></LinkProfile> : <LinkLogin></LinkLogin> 
-              } */}
             </IconButton> 
+            <IconButton>
+              {
+                !!props.islogged ? <LinkProfile></LinkProfile> : <LinkLogin></LinkLogin> 
+              }
+            </IconButton>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton

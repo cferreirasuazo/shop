@@ -1,13 +1,49 @@
-
-
-.inner .confirmationBox{
-   
-
+.cart-box{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: flex-start;
+    flex-direction: row;
+    justify-content: space-around;
+    
 }
 
+.cart-box .cart__products-list{
+    border: 1px solid black;
+    padding: 10px;
+}
 
+.cart-box .cart__confirmation{
+    flex-grow: 0;
+    border: 1px solid black;
+    max-width: 470px;
+    height: 250px;
+    
+}
 
+.order-summary{
+    
+}
+
+.order-summary > p{
+    padding: 7.5px;
+    margin: 0px;
+    background-color: black;
+    color: white;
+}
+
+.item-value{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px ;
+    border: 1px solid black;
+}
+.cart__confirmation-actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart__confirmation-actions .cart__confirmation-btn{
+    margin-top:20px;
+    background-color: coral;
+    width:456px;;
+}

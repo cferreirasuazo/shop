@@ -1,0 +1,9 @@
+.empty_cart-container{
+    display: flex;
+    justify-content: center;
+}
+
+.empty_cart-box{
+    display: flex;
+    align-items: center;
+}

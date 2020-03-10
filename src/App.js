@@ -14,6 +14,7 @@ import Login from "./components/Login/Login";
 import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
 import {history} from "../src/utils/history";
 import Register from "./components/Register/Register";
+import NotFound from "./components/Not_Found/Not_Found"
 
 class App extends Component {
   render() {
@@ -33,14 +34,13 @@ class App extends Component {
             <Route path="/user/profileinfo" exact component={ProfileInfo} />
             <Route path="/user/login" component={Login} />
             <Route path="/user/register" component={Register} />
-          
             <Route path="/nosotros" component={Nosotros}  />
             <Route path="/ofertas" />
             <Route path="/pedidos" />
             <Route path="/categorias" />
-            <Route path="/mercancia" component={Mercancia}/>     
-            <Route path="/:nombre" exact component={Mercancia}/> 
+            <Route path="/mercancia/:id" component={Mercancia}/>  
             <Route path="/articulo/:id" exact render={() => <Articulo/> }/>
+            <Route render={() => <NotFound></NotFound>} />
          </Switch>
          <Footer></Footer>
         </Router>

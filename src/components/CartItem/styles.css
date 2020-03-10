@@ -1,15 +1,25 @@
-/*
-article
 
-article__picture
+.cart-item{
+    margin-bottom: 10px;
+    border: 1px solid black;
+    width:600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
-article__info
+/*.cart-item__picture*/
+.cart-item__info{
+    
+    width:70%;
+    padding: 10px; 
+    
+}
+.cart-item__actions{
+   
+    width:30%;
+}
+/*.cart-item__btn_delete*/
+/*.cart-item__btn_update*/
 
-article__actions
 
-article__btn_delete
-
-article__btn_update
-
-
-*/

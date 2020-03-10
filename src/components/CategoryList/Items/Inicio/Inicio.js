@@ -40,7 +40,7 @@ class Inicio extends Component{
                  
     const links = this.state.categorias.map((categoria)=>{
         return (
-            <Link className={"link"} to={`/${categoria.nombre}`} key={categoria.nombre}>
+            <Link className={"link"} to={`/mercancia/${categoria.nombre}`} key={categoria.nombre}>
               <h1>{categoria.nombre}</h1>
                 {/* <img alt={`${categoria}`} src={require(`../../../../statics/${categoria}.png`)} /> */}
             </Link>

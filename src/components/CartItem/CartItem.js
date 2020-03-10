@@ -12,18 +12,18 @@ const CartItem = (props) => {
     var {articulo} = props.articulo
 
     return (
-        <Paper>
-            <div>
-                <Typography>{articulo.nombre}</Typography>
-                <Typography>{articulo.descripcion}</Typography>
-                <Typography>{articulo.precio}</Typography>
-                <Typography>{props.articulo.cantidad}</Typography>
+        <Paper className={"cart-item"}>
+            <div className={"cart-item__info"}>
+                <Typography>{`Name: ${articulo.nombre}`}</Typography>
+                <Typography>{`Description: ${articulo.descripcion}`}</Typography>
+                <Typography>{`Price: ${articulo.precio }`}</Typography>
+                <Typography>{`Amount: ${props.articulo.cantidad}`}</Typography>
+                <Typography>{`Subtotal: ${ props.articulo.cantidad * articulo.precio }`}</Typography>
             </div>    
-            <div>
-                <Button>Update</Button> 
-                <Button onClick={()=>{onDelete(props.articulo._id)}}>Delete</Button> 
-            </div>    
-            <Button>Checkout</Button>   
+            <div className={"cart-item__actions"}>
+                <Button className={"cart-item__btn_delete"} >Update</Button> 
+                <Button className={"cart-item__btn_update"} onClick={()=>{onDelete(props.articulo._id)}}>Delete</Button> 
+            </div>     
         </Paper>
     )
    

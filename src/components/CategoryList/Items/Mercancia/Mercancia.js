@@ -5,15 +5,8 @@ import {Box,Container, InputLabel, MenuItem,
 
 import Articulo from "./Articulo";
 import "./styles.css"
-import fakeItems from "../../../../fakeItems";
 import axios from "axios";
 
-
-const lista = ["Chair","Bacon","Computer","Chicken","Soap"].map((item)=>{
-    return(
-        <MenuItem key={item} value={item}>{item}</MenuItem>
-    )
-})
 const ordenar = ["a-z","z-a","menor-mayor","mayor-menor"].map((item)=>{
     return(
         <MenuItem key={item} value={item}>{item}</MenuItem>
@@ -21,14 +14,15 @@ const ordenar = ["a-z","z-a","menor-mayor","mayor-menor"].map((item)=>{
 })
 
 function Mercancia({match}){
-    const categoriaUrl = match.params.nombre;
+    const categoriaUrl = match.params.id;
     const [articulos,setArticulos] = useState([]);
     useEffect(()=>{
         const url = `http://localhost:4000/api/article/${categoriaUrl}`;
-        console.log(url)
         axios.get(url).then((req)=>{
+            console.log(req)
             setArticulos(req.data)
             setLoadingState(false)
+
         })
     },[])
 
@@ -95,8 +89,7 @@ function Mercancia({match}){
     const handleClickSelect = (event) =>{
         setOrden(event.target.value)
         var nuevaLista = nuevoOrden(event.target.value)
-        var lista = nuevaLista(fakeItems)
-        setList(lista.map(makeCard))
+        // setList(lista.map(makeCard))
         
     }
 
@@ -112,12 +105,6 @@ function Mercancia({match}){
            </Box>
            <Box>
                <form className={"form"}>
-               <FormControl className={"select"}>
-                <InputLabel  htmlFor="categorias">Categorias</InputLabel>
-                    <Select>
-                       {lista}
-                    </Select>
-               </FormControl>
 
                <FormControl className={"select"}>
                <InputLabel  htmlFor="orden">Ordenar por </InputLabel>

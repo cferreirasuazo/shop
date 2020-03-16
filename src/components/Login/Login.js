@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Box, Button, TextField, Container} from  "@material-ui/core";
 import {connect} from "react-redux";
 import {fetchClient} from "../../actions/clientActions";
-import ProfileInfo from "../ProfileInfo/ProfileInfo"
+
 import "./styles.css";
 import Link from "react-router-dom/Link";
 

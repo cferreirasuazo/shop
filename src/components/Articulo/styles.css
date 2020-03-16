@@ -1,6 +1,15 @@
 .articulo-box{
     padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+.articulo-photo{
+    border:1px solid grey;
+}
+
 
 .articulo-box__actions{
    
@@ -8,5 +17,6 @@
 }
 
 .articulo-box__actions .articulo-box__btn{
-    background-color: yellow
+    background-color: yellow;
+    margin-left:10px;
 }

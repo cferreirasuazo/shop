@@ -1,7 +1,7 @@
 
 import React, {useState,useEffect } from "react";
 import {Box,Container, InputLabel, MenuItem, 
-         FormControl, Select, Card } from "@material-ui/core"
+         FormControl, Select } from "@material-ui/core"
 
 import Articulo from "./Articulo";
 import "./styles.css"
@@ -19,30 +19,16 @@ function Mercancia({match}){
     useEffect(()=>{
         const url = `http://localhost:4000/api/article/${categoriaUrl}`;
         axios.get(url).then((req)=>{
-            console.log(req)
             setArticulos(req.data)
             setLoadingState(false)
 
         })
     },[])
 
-
-
-    const makeCard = (item) =>{
-        return(
-            <Card key={item.codigo} className={"item"}>
-                <p>{item.nombre}</p>
-                <p>{item.precio}</p>
-            </Card> 
-        )
-    }
-
-
     const fakeList = articulos.map((item,key)=>(
             <Articulo key={key} item={item} />
     ))
 
-    const [setList] = useState();
     const [isLoading,setLoadingState] = useState(true);
     const [orden,setOrden] = useState("");
 
@@ -88,9 +74,6 @@ function Mercancia({match}){
 
     const handleClickSelect = (event) =>{
         setOrden(event.target.value)
-        var nuevaLista = nuevoOrden(event.target.value)
-        // setList(lista.map(makeCard))
-        
     }
 
     return (

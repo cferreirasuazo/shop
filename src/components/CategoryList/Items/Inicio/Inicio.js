@@ -3,12 +3,6 @@ import {Link} from "react-router-dom";
 import "./styles.css"
 import { Container} from "@material-ui/core";
 import axios from "axios";
-import Login from "../../../Login/Login";
-
-
-
-// import {connect} from "react-redux";
-// import { bindActionCreators } from "redux";
 
 class Inicio extends Component{
 

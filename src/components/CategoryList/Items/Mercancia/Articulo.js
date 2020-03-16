@@ -17,8 +17,10 @@ class Articulo extends Component{
        return(
         <Link to={{
             pathname: `/articulo/${this.props.item._id}`,
-            articulo: this.props.item
-        }}>
+            state:{
+                articulo: this.props.item
+            }
+        }} >
             <h1>{this.props.item.nombre}</h1>
             <p>{this.props.item.precio}</p>
         </Link> 

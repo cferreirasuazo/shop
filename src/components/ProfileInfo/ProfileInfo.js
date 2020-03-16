@@ -1,7 +1,6 @@
-import React, {useEffect} from "react"
+import React from "react"
 import {connect} from "react-redux";
 import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
 import { Formik, Form, Field } from 'formik';
 import { Button} from '@material-ui/core';
 import { TextField } from 'formik-material-ui';

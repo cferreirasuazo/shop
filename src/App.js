@@ -15,6 +15,7 @@ import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
 import {history} from "../src/utils/history";
 import Register from "./components/Register/Register";
 import NotFound from "./components/Not_Found/Not_Found"
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 class App extends Component {
   render() {
@@ -30,7 +31,7 @@ class App extends Component {
          <Switch  >
             <Route path="/" exact component={Inicio}  />
             <Route path="/user/cart" exact component={Cart} />
-            <Route path="/user/profile" component={Profile} />
+            <PrivateRoute path="/user/profile" component={Profile} />
             <Route path="/user/profileinfo" exact component={ProfileInfo} />
             <Route path="/user/login" component={Login} />
             <Route path="/user/register" component={Register} />

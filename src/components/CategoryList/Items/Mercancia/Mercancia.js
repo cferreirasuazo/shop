@@ -6,6 +6,7 @@ import {Box,Container, InputLabel, MenuItem,
 import Articulo from "./Articulo";
 import "./styles.css"
 import axios from "axios";
+import Loading from "../../../Loading/Loading";
 
 const ordenar = ["a-z","z-a","menor-mayor","mayor-menor"].map((item)=>{
     return(
@@ -80,7 +81,7 @@ function Mercancia({match}){
        <Container className={"wrapper"}>
         {
             isLoading ? 
-            <h1>Fetching Mercancia</h1>
+            <Loading></Loading>
             :<div>
                              <Box className="buscador">               
            <Box>

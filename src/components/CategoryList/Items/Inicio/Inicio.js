@@ -4,6 +4,7 @@ import "./styles.css"
 import { Container} from "@material-ui/core";
 import axios from "axios";
 
+import Loading from "../../../Loading/Loading";
 class Inicio extends Component{
 
     constructor(props){
@@ -43,16 +44,19 @@ class Inicio extends Component{
 
     return (
        <div>
-        <div>
+        {
+            !this.state.isLoading ? 
+            <div>
             <h1>Lorem ipsum dolor sit amet</h1>
 
             <Container className="container">
-                {
-                    this.state.isLoading ? <h1>It's fetching</h1> : links
-                }
+                { links }
             </Container> 
+            </div>
+            : <Loading></Loading>
+           
 
-        </div>
+        }
 
        </div>
     )

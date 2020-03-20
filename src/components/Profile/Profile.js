@@ -3,39 +3,36 @@ import Box from '@material-ui/core/Box';
 import Link from "react-router-dom/Link";
 import "./index.css";
 
-
 const Profile = () => (
-   <Box className={"profile-box"}  display="flex" flexDirection="column">
-       <Box>
-       <Box className={"account-item"}>
-           <h1 className={"title"}><i className="fa fa-user-circle" aria-hidden="true"></i> My Account</h1>
-           <ul className={"list"}>
-                <li className={"list-item"}><Link to={"/user/profileinfo"}>Change Profile Info</Link></li>
-                <li className={"list-item"}>Change your password</li>
-                <li className={"list-item"}>Modify your address entries</li>
-           </ul>
-       </Box>
-
-       <Box className={"account-item"}>
-           <h1 className={"title"}><i className={"fa fa-shopping-bag"} aria-hidden="true"></i> My Orders</h1>
-           <ul className={"list"}>
-                <li className={"list-item"}>View your order history</li>
-                <li className={"list-item"}>View your return request</li>
-                
-           </ul>
-       </Box>
-
-       <Box className={"account-item"}>
-           <h1 className={"title"}><i className="fa fa-sign-out" aria-hidden="true"></i> Log Out</h1>
-           <ul className={"list"}>
-                <li className={"list-item"}> Click here to log out your account</li>
-           </ul>
-       </Box>
-
-        
-
-       </Box>
+   <Box className={"profile-box"}>
        
+       <Box className={"account-item"}>
+           <i className="fa fa-user-circle" aria-hidden="true"></i> 
+           <h1 className={"title"}>My Account</h1>
+           <div className={"list"}>
+                <div className={"list-item"}><Link to={"/user/profileinfo"}>Change Profile Info</Link></div>
+                <div className={"list-item"}>Change your password</div>
+                <div className={"list-item"}>Modify your address entries</div>
+           </div>
+       </Box>
+
+       <Box className={"account-item"}>
+           <i className={"fa fa-shopping-bag"} aria-hidden="true"></i>
+           <h1 className={"title"}> My Orders</h1>
+           <div className={"list"}>
+                <div className={"list-item"}>View your order history</div>
+                <div className={"list-item"}>View your return request</div>
+                
+           </div>
+       </Box>
+
+       <Box className={"account-item"}>
+           <i className="fa fa-sign-out" aria-hidden="true"></i> 
+           <h1 className={"title"}>Log Out</h1>
+           <div className={"list"}>
+                <div className={"list-item"}> Click here to log out your account</div>
+           </div>
+       </Box>
 
    </Box>
 )

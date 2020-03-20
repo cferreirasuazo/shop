@@ -1,5 +1,10 @@
 import React,{Component} from "react";
 import {Link} from "react-router-dom";
+import styled from "styled-components";
+
+const StyledLink = styled(Link)`
+    background: lightblue;
+`
 
 class Articulo extends Component{
     constructor(item){

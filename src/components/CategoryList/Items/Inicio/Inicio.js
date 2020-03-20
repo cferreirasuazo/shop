@@ -1,7 +1,7 @@
 import React, { Component } from "react" 
 import {Link} from "react-router-dom";
 import "./styles.css"
-import { Container} from "@material-ui/core";
+import { Container, Box} from "@material-ui/core";
 import axios from "axios";
 
 import Loading from "../../../Loading/Loading";
@@ -27,38 +27,31 @@ class Inicio extends Component{
 
 
     render(){
-    
-    // const categorias = ["chair","bacon","computer",
-    //                     "chicken","soap","mouse",
-    //                     "tuna","car","shoes"];
-    
-                 
+          
     const links = this.state.categorias.map((categoria)=>{
         return (
-            <Link className={"link"} to={`/mercancia/${categoria.nombre}`} key={categoria.nombre}>
-              <h1>{categoria.nombre}</h1>
+            <Link className={"categorie"} to={`/mercancia/${categoria.nombre}`} key={categoria.nombre}>
+              <h1 className={"categorie-title"}>{categoria.nombre}</h1>
                 {/* <img alt={`${categoria}`} src={require(`../../../../statics/${categoria}.png`)} /> */}
             </Link>
         )
     })
 
     return (
-       <div>
+       <Container className={"inicio"}>
         {
             !this.state.isLoading ? 
-            <div>
-            <h1>Lorem ipsum dolor sit amet</h1>
+            <div className={"inicio-box"}>
+            <h1 className={"inicio-box__title"}>Lorem ipsum dolor sit amet</h1>
 
-            <Container className="container">
+            <Box className="inicio-categories">
                 { links }
-            </Container> 
+            </Box> 
             </div>
             : <Loading></Loading>
-           
-
         }
 
-       </div>
+       </Container>
     )
 }
 

@@ -78,7 +78,7 @@ function Mercancia({match}){
     }
 
     return (
-       <Container className={"wrapper"}>
+       <Container className={"mercancia"}>
         {
             isLoading ? 
             <Loading></Loading>

@@ -1,15 +1,29 @@
+:root{
+    --icon-measure: 250px;
+}
+
+
 .articulo-box{
     padding: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    margin:10px;
+}
+
+.articulo{
+    padding: 25px;
 }
 
 .articulo-photo{
-    border:1px solid grey;
+   
 }
 
+.articulo-photo .icon{
+    width: var(--icon-measure);
+    height: var(--icon-measure)
+}
 
 .articulo-box__actions{
    

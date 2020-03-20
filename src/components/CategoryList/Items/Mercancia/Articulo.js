@@ -3,7 +3,27 @@ import {Link} from "react-router-dom";
 import styled from "styled-components";
 
 const StyledLink = styled(Link)`
-    background: lightblue;
+    background: #539cb2;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+`
+const Name = styled.p`
+    color: #fff;
+`
+
+const Price = styled.div`
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    background: green;
+    align-self: flex-end;
 `
 
 class Articulo extends Component{
@@ -16,19 +36,18 @@ class Articulo extends Component{
         this.props.addToCart(item)
     }
 
-
-
     render(){
        return(
-        <Link to={{
+        <StyledLink to={{
             pathname: `/articulo/${this.props.item._id}`,
             state:{
                 articulo: this.props.item
             }
         }} >
-            <h1>{this.props.item.nombre}</h1>
-            <p>{this.props.item.precio}</p>
-        </Link> 
+
+            <Name>{this.props.item.nombre}</Name>
+            <Price>{`$ ${this.props.item.precio}`}</Price>
+        </StyledLink> 
        )
     }
 }

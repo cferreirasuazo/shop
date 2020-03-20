@@ -61,11 +61,12 @@ function Articulo({props, location}){
         return(
             <Container className={"articulo-box"}>
               <div className={"articulo-photo"}>
-                <PhotoIcon></PhotoIcon>
+                <PhotoIcon className={"icon"}></PhotoIcon>
               </div>
               <div className={"articulo"}>
                 <div>
                     <h1>{currentArticle.nombre}</h1>     
+                    <hr></hr>
                     <p>{currentArticle.descripcion}</p> 
                 </div>
                 <div className={"articulo-box__actions"}>

@@ -13,7 +13,6 @@ export default function clintReducer(state = initialState,action){
                 ...state,client:action.payload
             }
         case SET_LOG:
-            console.log(action.payload)
             return{
                 ...state,islogged:action.payload
             }

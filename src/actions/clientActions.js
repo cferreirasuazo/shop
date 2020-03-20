@@ -14,19 +14,24 @@ export const fetchClient = (cliente) => {
     return (dispatch) => {
         axios.post(url,{cliente})
             .then((response)=>{
-               
+
+              
                 dispatch({
                     type:FETCH_CLIENT,
                     payload:response.data.cliente
                 });
-               dispatch({
+                localStorage.setItem("client", JSON.stringify(response.data.cliente))
+                
+                dispatch({
                    type:FETCH_ARTICLES,
                    payload:response.data.articulos
-               });
-               dispatch({
+                });
+                localStorage.setItem("cart", JSON.stringify(response.data.articulos))
+                dispatch({
                    type:SET_LOG,
                    payload:true
-               })
+                })
+               
             }).catch((err)=>{   
                console.log(err) 
             })

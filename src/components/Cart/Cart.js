@@ -3,18 +3,13 @@ import {Button, Box, Container, Paper} from "@material-ui/core";
 import "./styles.css";
 import CartItem from "../CartItem/CartItem";
 import { connect } from 'react-redux';
-import {fetchArticles,deleteArticle} from "../../actions/cartActions"
+import {deleteArticle} from "../../actions/cartActions"
 import EmptyCart from "../EmpyCart/EmptyCart";
 class Cart extends Component{
     constructor(props){
         super(props)
         this.handleDelete = this.handleDelete.bind(this)
       
-    }
-
-    componentDidMount(){
-        //this.props.fetchArticles()
-        
     }
 
     handleDelete(id){
@@ -86,7 +81,6 @@ const mapStateToProps = store => ({
 })
 
 const mapDispatchToProps = {
-    fetchArticles,
     deleteArticle
 }
 

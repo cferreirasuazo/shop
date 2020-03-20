@@ -17,7 +17,9 @@ import Register from "./components/Register/Register";
 import NotFound from "./components/Not_Found/Not_Found"
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
+
 class App extends Component {
+  
   render() {
     
     return (

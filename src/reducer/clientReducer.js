@@ -7,6 +7,7 @@ var initialState = {
 
 
 export default function clintReducer(state = initialState,action){
+    console.log(action.type)
     switch(action.type){
         case FETCH_CLIENT:
             return{

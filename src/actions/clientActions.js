@@ -5,7 +5,7 @@ export const LOGGIN="LOGGIN";
 export const UPDATE_ACCOUNT="UPDATE_ACCOUNT";
 export const IS_LOGGED="IS_LOGGED";
 export const NOT_LOGGED="NOT_LOGGED";
-export const SET_LOG="SET_LOG"
+export const SET_LOG="SET_LOG";
 import {FETCH_ARTICLES} from "./cartActions";
 
 export const fetchClient = (cliente) => {

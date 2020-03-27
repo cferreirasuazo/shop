@@ -228,11 +228,6 @@ function PrimarySearchAppBar(props) {
               >
               <ShoppingCart></ShoppingCart>
             </IconButton> 
-            <IconButton>
-              {
-                !!props.islogged ? <LinkProfile></LinkProfile> : <LinkLogin></LinkLogin> 
-              }
-            </IconButton>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton

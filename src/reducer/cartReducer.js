@@ -20,6 +20,7 @@ export default function cartReducer (state = initialState,action){
         case CLEAN_CART:
             return [];
         case FETCH_ARTICLES:
+                
             return {
                 ...state,
                 articles: action.payload

@@ -1,36 +1,75 @@
-import React from "react";
+import React, {useState} from "react";
+import {useDispatch, useSelector} from "react-redux"
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import { Formik, Form, Field } from 'formik';
 import { Button} from '@material-ui/core';
 import { TextField } from 'formik-material-ui';
 import "./styles.css"
+import axios from "axios";
+import {history} from "../../utils/history";
 
 const Register = () =>{
+    
+    const [emailExist, setEmailExist] = useState(false);
+    const [isSuccessful, setSuccessful] = useState(false);
+    const dispatch = useDispatch()
     return (
         <Container className={"register-box"}>
         <h1>Profile Info</h1>
         <Formik
             initialValues={{
-                    email: '',
+                    nombre: '',
+                    apellido: '',
+                    direccion: '',
+                    correo: '',
                     password: '',
+                    check_password: ''
                 }}
             validate={values => {
-    const errors = {};
-    if (!values.email) {
-      errors.email = 'Required';
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-    ) {
-      errors.email = 'Invalid email address';
-    }
-    return errors;
-  }}
-  onSubmit={(values, { setSubmitting }) => {
-    setTimeout(() => {
-      setSubmitting(false);
-      alert(JSON.stringify(values, null, 2));
-    }, 500);
+                const errors = {};
+                if (!values.correo) {
+                  errors.correo = 'Required';
+                } else if (
+                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.correo)
+                ) {
+                  errors.correo = 'Invalid correo direccion';
+                }
+
+                if(!values.nombre){
+                    errors.nombre = 'Required'
+                }
+
+                if(!values.apellido){
+                  errors.apellido = 'Required'
+                }
+                
+                if(!values.direccion){
+                  errors.direccion = 'Required'
+                }              
+                if(!values.password){
+                  errors.password = 'Required'
+                  errors.check_password = "Required"
+                }else if (values.password !== values.check_password){
+                  errors.password = "password must be the same"
+                }
+
+                return errors;
+            }}
+  onSubmit={(values, {setSubmitting, resetForm}) => {
+        setSubmitting(false)
+        var cliente = Object.assign({},values)
+        const url = "http://localhost:4000/api/register"
+        axios.post(url, {cliente}).then(({data})=>{
+              dispatch({type:"FETCH_CLIENT",payload: data.info})
+              dispatch({type:"SET_LOG",payload:true})
+              setEmailExist(true)
+              resetForm()
+              history.push("/")    
+        })
+  
+        
+        //         
   }}
 >
   {({ submitForm, isSubmitting }) => (
@@ -39,7 +78,7 @@ const Register = () =>{
       <Box>
       <Field 
         component={TextField}
-        name="name"
+        name="nombre"
         type="text"
         label="Name"
       />
@@ -48,35 +87,36 @@ const Register = () =>{
         component={TextField}
         type="text"
         label="Lastname"
-        name="lastname"
+        name="apellido"
       />
       </Box>
 
    
       <br />
+      
       <Field 
         component={TextField}
         type="text"
         label="Email"
-        name="email"
+        name="correo"
       />
    
       <br />
+   
+      <h1>Address Informacion</h1>
+
       <Field 
         component={TextField}
         multiline
-        rows="4"
+        rows="2"
         rowsMax={6}
         type="text"
         label="Address"
-        name="address"
+        name="direccion"
         
       />
    
       <br />
-
-  
-      <h1>Address Informacion</h1>
 
       <h1>Your Password</h1>
       <Field 
@@ -89,7 +129,7 @@ const Register = () =>{
       <br />
       <Field 
         component={TextField}
-        name="check-password"
+        name="check_password"
         type="password"
         label="Enter again password"
       />
@@ -103,6 +143,9 @@ const Register = () =>{
       >
         Submit
       </Button>
+
+      <h2 style={{display: emailExist ? "block" : "none"    }} >Sorry, that account already exist</h2>
+      <h2 style={{display: isSuccessful ? "block" : "none"  }}>Successul</h2>
     </Form>
   )}
 </Formik>

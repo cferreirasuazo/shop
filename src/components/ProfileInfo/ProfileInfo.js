@@ -7,7 +7,7 @@ import { TextField } from 'formik-material-ui';
 import "./styles.css"
 
 const ProfileInfo = (props) => {
-    
+    console.log(props)
     return(
         <Box className={"profileinfo-box"}>
             <h1>Profile Info</h1>

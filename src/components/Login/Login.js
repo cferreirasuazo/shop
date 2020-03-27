@@ -7,13 +7,13 @@ import "./styles.css";
 import Link from "react-router-dom/Link";
 
 const Login = (props) => {
-    var [username, setUsername] = useState("");
+    var [username, setEmail] = useState("");
     var [password, setPassword] = useState(""); 
     
     function _handlerChange(e){
     
         if (e.target.id === "login-username"){
-            setUsername(e.target.value)
+            setEmail(e.target.value)
         }else{
             setPassword(e.target.value)
         };
@@ -33,7 +33,7 @@ const Login = (props) => {
     return (
         <Container className={"login-box"}>
         <Box className={"login-wrapper"} display="flex" flexDirection="column" alignItems="center">
-            <TextField className={"login-input"} onChange={_handlerChange} required id="login-username" label="Username"  />
+            <TextField className={"login-input"} onChange={_handlerChange} required id="login-email" label="email"  />
             <TextField className={"login-input"} onChange={_handlerChange} required id="login-password" label="Password"  />
             <Button onClick={getCredentials}>Login</Button>
            

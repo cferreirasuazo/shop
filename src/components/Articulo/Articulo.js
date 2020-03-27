@@ -18,7 +18,6 @@ function Articulo({props, location}){
         const _isLogged = useSelector((state) => state.client.islogged)
         const client = useSelector((state) => state.client.client.usuario)
         
-      
         useEffect(()=>{
             if (location.state){
               setCurrentArticle(location.state.articulo)
@@ -59,7 +58,7 @@ function Articulo({props, location}){
           };
 
         return(
-            <Container className={"articulo-box"}>
+            <Container  className={"articulo-box"}>
               <div className={"articulo-photo"}>
                 <PhotoIcon className={"icon"}></PhotoIcon>
               </div>

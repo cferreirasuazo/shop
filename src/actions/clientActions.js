@@ -21,8 +21,9 @@ export const registerClient = (cliente) => {
 export const fetchClient = (cliente) => {
     
     const url = `http://localhost:4000/api/login`;   
-    return (dispatch) => {
-        axios.post(url,{cliente})
+    return (dispatch) => (
+        new Promise(function(resolve,reject){
+            axios.post(url,{cliente})
             .then((response)=>{
               
                 dispatch({
@@ -30,7 +31,7 @@ export const fetchClient = (cliente) => {
                     payload:response.data.cliente
                 });
               localStorage.setItem("client", JSON.stringify(response.data.cliente))
-                
+                resolve(response)
                 dispatch({
                    type:FETCH_ARTICLES,
                    payload:response.data.articulos
@@ -42,7 +43,9 @@ export const fetchClient = (cliente) => {
                 })
                
             }).catch((err)=>{   
-               console.log(err) 
+                reject(err)
+                
             })
-    }
+        })
+    )
 }

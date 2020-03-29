@@ -1,13 +1,15 @@
 import React from "react"
-import {connect} from "react-redux";
+import {connect,useDispatch,useSelector} from "react-redux";
 import Box from '@material-ui/core/Box';
 import { Formik, Form, Field } from 'formik';
 import { Button} from '@material-ui/core';
 import { TextField } from 'formik-material-ui';
 import "./styles.css"
+import {updateClient} from "../../actions/clientActions";
 
 const ProfileInfo = (props) => {
-    console.log(props)
+    var dispatch = useDispatch()
+
     return(
         <Box className={"profileinfo-box"}>
             <h1>Profile Info</h1>
@@ -47,7 +49,14 @@ const ProfileInfo = (props) => {
                  values.correo === cliente.correo ){
                     alert("No data changed")
                  }else{
-                    alert("Data changed")
+                    var update = {}
+                    for (var key in values){
+                       if(values[key] != cliente[key]){
+                         update[key] = values[key]
+                       }
+                    } 
+                    
+                   dispatch(updateClient(update))
                  }
 
         }, 500);

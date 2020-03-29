@@ -6,6 +6,7 @@ export const UPDATE_ACCOUNT="UPDATE_ACCOUNT";
 export const IS_LOGGED="IS_LOGGED";
 export const NOT_LOGGED="NOT_LOGGED";
 export const SET_LOG="SET_LOG";
+
 import {FETCH_ARTICLES} from "./cartActions";
 
 export const registerClient = (cliente) => {
@@ -18,6 +19,14 @@ export const registerClient = (cliente) => {
     }
 }
 
+export const updateClient = (client) =>{
+    console.log(client)
+    return {
+        type:UPDATE_CLIENT,
+        payload: client
+    }
+}
+
 export const fetchClient = (cliente) => {
     
     const url = `http://localhost:4000/api/login`;   
@@ -25,7 +34,7 @@ export const fetchClient = (cliente) => {
         new Promise(function(resolve,reject){
             axios.post(url,{cliente})
             .then((response)=>{
-              
+                console.log(response.data.cliente)
                 dispatch({
                     type:FETCH_CLIENT,
                     payload:response.data.cliente

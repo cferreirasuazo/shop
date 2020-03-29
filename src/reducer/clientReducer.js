@@ -1,4 +1,6 @@
-import {FETCH_CLIENT,SET_LOG} from "../actions/clientActions";
+import {FETCH_CLIENT,SET_LOG, UPDATE_CLIENT} from "../actions/clientActions";
+import produce from "immer"
+import updateClient from "../utils/updateClient"
 
 var initialState = {
     client: {},
@@ -7,18 +9,24 @@ var initialState = {
 
 
 export default function clintReducer(state = initialState,action){
-    console.log(action.type)
+   return produce(state, (draft)=>{
     switch(action.type){
         case FETCH_CLIENT:
-                
+            
             return{
-                ...state,client:action.payload
+                ...draft,client:action.payload
             }
+        case  UPDATE_CLIENT:
+                //You have to return the draft everytime you change a value
+                draft.client = updateClient(draft.client,action.payload)
+                return draft;
         case SET_LOG:
             return{
-                ...state,islogged:action.payload
+                ...draft,islogged:action.payload
             }
+
         default:
-            return state
+            return draft
     }
+   })
 }

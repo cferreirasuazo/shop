@@ -107,7 +107,7 @@ const ProfileInfo = (props) => {
             disabled={isSubmitting}
             onClick={submitForm}
           >
-            Submit
+            Update Info
           </Button>
         </Form>
       )}

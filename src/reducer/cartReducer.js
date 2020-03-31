@@ -1,16 +1,11 @@
-import {ADD_ARTICLE, DELETE_ARTICLE,CLEAN_CART,FETCH_ARTICLES,ADDTOCART} from "../actions/cartActions" ;  
+import {DELETE_ARTICLE,CLEAN_CART,FETCH_ARTICLES,ADDTOCART} from "../actions/cartActions" ;  
 
 var initialState = {
-    articles:[
-     
-    ]
-
+    articles:[]
 }
 
 export default function cartReducer (state = initialState,action){
     switch(action.type){
-        case ADD_ARTICLE:
-            return 
         case DELETE_ARTICLE:
             return Object.assign({},state,{
                 articles: state.articles.filter((article)=>{
@@ -26,7 +21,7 @@ export default function cartReducer (state = initialState,action){
                 articles: action.payload
             }
         case ADDTOCART:
-
+            console.log(state.articles)
             return {
                 articles:[...state.articles,action.payload]
             }

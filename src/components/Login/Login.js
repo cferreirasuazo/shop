@@ -24,8 +24,8 @@ const Login = (props) => {
 
     function getCredentials(){
         var cliente = {
-            correo: "kyloren@mail.com",
-            password: "kyloren"
+            correo: "hansolo@mail.com",
+            password: "hansolo"
         }   
         props.fetchClient(cliente).then((value)=>{
             history.push("/")

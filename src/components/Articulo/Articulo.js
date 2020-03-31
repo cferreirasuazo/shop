@@ -1,7 +1,7 @@
-import React ,{useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import React ,{useEffect, useState } from "react";
+import {useDispatch, useSelector,connect} from "react-redux";
 import "./styles.css";
-import {withRouter} from "react-router-dom"
+import {withRouter,useLocation} from "react-router-dom"
 import {Container, Button} from "@material-ui/core";
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
@@ -11,13 +11,20 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import PhotoIcon from '@material-ui/icons/Photo';
 import Not_Found from "../Not_Found/Not_Found";
 import { history } from "../../utils/history";
-function Articulo({props, location}){
+import {addToCart} from "../../actions/cartActions"
+
+
+
+function Articulo(props){
         const [currentArticle, setCurrentArticle] = useState({}) 
         const [amount, setAmount] = useState(1) 
+        const [isSaving, setSaving] = useState(false);
         const dispatch = useDispatch();
         const _isLogged = useSelector((state) => state.client.islogged)
-        const client = useSelector((state) => state.client.client.usuario)
-        
+        const client = useSelector((state) => state.client.client.correo)
+        const cart = useSelector((state) => state.cart.articles)
+        const location = useLocation()
+
         useEffect(()=>{
             if (location.state){
               setCurrentArticle(location.state.articulo)
@@ -25,31 +32,50 @@ function Articulo({props, location}){
             
         },[])
 
+
+        const isInCart = function(articles,currentArticle){
+            var inCart = false;
+            articles.forEach((article,index,articles)=>{
+                  if(article.articulo._id == currentArticle._id){
+                    inCart = true
+                  }       
+            })
+
+            return inCart
+        }
+
         const _addToCart = () => {
             
             if (_isLogged){
 
               if(amount > 0){
                 var addToArticleRequest = {
-                  articleId:currentArticle._id,
-                  amount:amount,
-                  username:client
+                  articuloId:currentArticle._id,
+                  cantidad:amount,
+                  correo:client
                 }
-
-                console.log(addToArticleRequest);
-              }else{
-                //add popup if amount if empty
+                if(!isInCart(cart,currentArticle)){
+                    console.log("Added")
+                    setSaving(true)
+                    props.addToCart(addToArticleRequest).then((resolve)=>{
+                        setSaving(resolve)
+                    })  
+                  }else{
+                  console.log("not added")
+                }
                 
+                               
+
+                
+
+
+               }else{
+                //add popup if amount if empty 
               }
-
-                
             }else{
-
               //add popup if user is not loggin
               console.log("Not logged")
             }
-
-      
         }
 
         //Event for handle the selection of Select component
@@ -75,6 +101,7 @@ function Articulo({props, location}){
                         {[1,2,3,4,5,6,7,8,9].map((i)=>(<MenuItem key={i} value={i}>{i}</MenuItem>))}
                         </Select>
                         <FormHelperText>Amount</FormHelperText>
+                        <p style={{display: isSaving ? "inline" : "none"  }}>adding...</p>
                     </FormControl>
                     <Button onClick={_addToCart} className={"articulo-box__btn"} ><AddShoppingCartIcon/> Add to cart</Button>
                 </div>
@@ -83,4 +110,9 @@ function Articulo({props, location}){
         )
     }
 
-export default withRouter(Articulo);
+const mapDispatchToProps = {
+    addToCart
+}
+  
+
+export default connect(null,mapDispatchToProps)(withRouter(Articulo));

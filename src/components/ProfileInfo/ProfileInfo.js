@@ -9,7 +9,7 @@ import {updateClient} from "../../actions/clientActions";
 
 const ProfileInfo = (props) => {
     var dispatch = useDispatch()
-
+    console.log("Client info", props.cliente)
     return(
         <Box className={"profileinfo-box"}>
             <h1>Profile Info</h1>
@@ -17,7 +17,8 @@ const ProfileInfo = (props) => {
       initialValues={{
         nombre: props.cliente.nombre,
         apellido: props.cliente.apellido,
-        correo: props.cliente.correo
+        correo: props.cliente.correo,
+        direccion: props.cliente.direccion
       }}
       validate={values => {
         const errors = {};
@@ -46,7 +47,7 @@ const ProfileInfo = (props) => {
           var {cliente} = props;
           if(values.nombre === cliente.nombre && 
               values.apellido === cliente.apellido &&
-                 values.correo === cliente.correo ){
+              values.direccion === cliente.direccion){
                     alert("No data changed")
                  }else{
                     var update = {}
@@ -56,6 +57,7 @@ const ProfileInfo = (props) => {
                        }
                     } 
                     
+                   update = Object.assign(update,{correo:cliente.correo})
                    dispatch(updateClient(update))
                  }
 
@@ -86,6 +88,7 @@ const ProfileInfo = (props) => {
             component={TextField}
             type="text"
             label="Email"
+            disabled
             name="correo"
             
           />
@@ -97,7 +100,7 @@ const ProfileInfo = (props) => {
             rowsMax={6}
             type="text"
             label="Address"
-            name="address"
+            name="direccion"
           />
        
           <br />
@@ -107,7 +110,7 @@ const ProfileInfo = (props) => {
             disabled={isSubmitting}
             onClick={submitForm}
           >
-            Submit
+            Update Info
           </Button>
         </Form>
       )}

@@ -61,7 +61,9 @@ const Register = () =>{
         var cliente = Object.assign({},values)
         const url = "http://localhost:4000/api/register"
         axios.post(url, {cliente}).then(({data})=>{
+              console.log(data)
               dispatch({type:"FETCH_CLIENT",payload: data.info})
+              localStorage.setItem("client", JSON.stringify(data.info))
               dispatch({type:"SET_LOG",payload:true})
               setEmailExist(true)
               resetForm()

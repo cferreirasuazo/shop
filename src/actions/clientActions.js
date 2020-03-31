@@ -19,17 +19,28 @@ export const registerClient = (cliente) => {
     }
 }
 
-export const updateClient = (client) =>{
-    console.log(client)
-    return {
-        type:UPDATE_CLIENT,
-        payload: client
-    }
+export const updateClient = (request) =>{
+    const url = "http://localhost:4000/api/cliente-update";
+    console.log("Action - updateClient")
+    return (dispatch) =>(
+        //Returns a promise to return the success or rejection of the operation
+        new Promise((resolve,reject)=>{
+            axios.post(url,{request})
+                .then((response)=>{
+                    console.log(response)
+                    dispatch({
+                        type:UPDATE_CLIENT,
+                        payload: response.data.update
+                    })
+                    resolve("UPDATED")
+                })
+        })
+    )
 }
 
 export const fetchClient = (cliente) => {
-    
-    const url = `http://localhost:4000/api/login`;   
+
+    const url = `http://localhost:4000/api/login`;
     return (dispatch) => (
         new Promise(function(resolve,reject){
             axios.post(url,{cliente})
@@ -50,10 +61,10 @@ export const fetchClient = (cliente) => {
                    type:SET_LOG,
                    payload:true
                 })
-               
-            }).catch((err)=>{   
+
+            }).catch((err)=>{
                 reject(err)
-                
+
             })
         })
     )

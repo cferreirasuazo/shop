@@ -8,15 +8,16 @@ import "./styles.css";
 import {history} from "../../utils/history";
 
 const Login = (props) => {
-    var [username, setEmail] = useState("");
+    var [email, setEmail] = useState("");
     var [password, setPassword] = useState(""); 
     var [isFound,setFound] = useState(true);
 
     function _handlerChange(e){
-    
-        if (e.target.id === "login-username"){
+        if (e.target.id === "login-email"){
             setEmail(e.target.value)
-        }else{
+        }
+        
+        if (e.target.id === "login-password"){
             setPassword(e.target.value)
         };
         
@@ -24,16 +25,15 @@ const Login = (props) => {
 
     function getCredentials(){
         var cliente = {
-            correo: "kyloren@mail.com",
-            password: "kyloren"
+            correo: email,
+            password: password
         }   
+        
         props.fetchClient(cliente).then((value)=>{
             history.push("/")
         },(error)=>{
             setFound(false)
         })
-        
-        
     }
 
     return (

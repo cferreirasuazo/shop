@@ -9,7 +9,6 @@ import cartReducer from "../src/reducer/cartReducer";
 import clientReducer from "../src/reducer/clientReducer";
 import {FETCH_CLIENT, SET_LOG} from "../src/actions/clientActions"
 import {FETCH_ARTICLES} from "./actions/cartActions";
-import {updateClient,UPDATE_CLIENT} from "./actions/clientActions"
 
 const middleware = applyMiddleware(thunk)
 

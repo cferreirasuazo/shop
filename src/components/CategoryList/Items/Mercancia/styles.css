@@ -6,7 +6,6 @@
 
 .buscador{ /*product-search*/
     display: flex;
-    border: 1px solid yellow;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;

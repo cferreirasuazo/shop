@@ -1,5 +1,5 @@
 import React from "react"
-import {connect,useDispatch,useSelector} from "react-redux";
+import {connect,useDispatch} from "react-redux";
 import Box from '@material-ui/core/Box';
 import { Formik, Form, Field } from 'formik';
 import { Button} from '@material-ui/core';
@@ -52,7 +52,7 @@ const ProfileInfo = (props) => {
                  }else{
                     var update = {}
                     for (var key in values){
-                       if(values[key] != cliente[key]){
+                       if(values[key] !== cliente[key]){
                          update[key] = values[key]
                        }
                     } 

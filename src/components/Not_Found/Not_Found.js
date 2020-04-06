@@ -7,6 +7,7 @@ import "./styles.css";
 const NotFound = () => (
     <Container className={"not-found-container"}>
             <Box className={"not_found-box"}>
+                <WarningIcon></WarningIcon>
                 <h1 className={"not-found-box__title"}>Oops</h1>
                 <h2>404 - PAGE NOT FOUND  </h2>
                 <p>

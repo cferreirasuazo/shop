@@ -12,6 +12,8 @@ const BoxNavBar = styled(Box)`
 const Item = styled(Link)`
      margin-right:15px;
      list-style:none;
+     font-size:27px;
+     color:black;
      text-decoration:none;
 `
 
@@ -24,6 +26,7 @@ function CategoryList(){
                 <Item to="/" ><Box>Inicio</Box></Item>
                 <Item to="/pedidos" ><Box>Como Hacer Pedidos</Box></Item>
                 <Item to="/nosotros" ><Box>Nosotros</Box></Item>
+               
             </BoxNavBar>   
         </div>
 

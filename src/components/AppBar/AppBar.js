@@ -20,19 +20,6 @@ import {history} from "../../utils/history";
 
 const redirectTo = (url) =>( history.push(url) )
       
-const LinkLogin = () =>{
-  return (
-    <Link to="/user/login">LOGIN</Link>
-  )
-}
-
-const LinkProfile = (props) => {
-  
-  return (
-    <Link to="/user/profile">PROFILE</Link>
-  )
-}
-
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,

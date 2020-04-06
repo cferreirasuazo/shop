@@ -13,7 +13,7 @@ class Cart extends Component{
     }
 
     handleDelete(id){
-        console.log("handleDelete")
+        
         this.props.deleteArticle(id)
         
     }

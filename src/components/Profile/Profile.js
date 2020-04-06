@@ -15,6 +15,7 @@ const Profile = () => {
             localStorage.clear()
             dispatch( { type:SET_LOG,payload:false } )
         }
+        window.location.reload(false);
     }
 
     return (

@@ -10,7 +10,6 @@ import clientReducer from "../src/reducer/clientReducer";
 import {FETCH_CLIENT, SET_LOG} from "../src/actions/clientActions"
 import {FETCH_ARTICLES} from "./actions/cartActions";
 
-
 const middleware = applyMiddleware(thunk)
 
 const rootReducer = combineReducers({client:clientReducer, cart:cartReducer})
@@ -35,6 +34,8 @@ if(localStorage.getItem("client")){
       payload:true
     })
 }
+
+
 
 store.subscribe(()=>{
     console.log(store.getState())

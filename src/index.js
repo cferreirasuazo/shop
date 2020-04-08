@@ -8,7 +8,7 @@ import thunk from "redux-thunk";
 import cartReducer from "../src/reducer/cartReducer";
 import clientReducer from "../src/reducer/clientReducer";
 import {FETCH_CLIENT, SET_LOG} from "../src/actions/clientActions"
-import {FETCH_ARTICLES} from "./actions/cartActions";
+import {FETCH_ARTICLES,createOrder} from "./actions/cartActions";
 
 const middleware = applyMiddleware(thunk)
 
@@ -19,6 +19,7 @@ const store = createStore(rootReducer,middleware);
 if(localStorage.getItem("client")){
   var client = JSON.parse(localStorage.getItem("client"))
   var cart = JSON.parse(localStorage.getItem("cart"))
+  console.log(cart)
     store.dispatch({
       type:FETCH_CLIENT,
       payload:client
@@ -35,12 +36,9 @@ if(localStorage.getItem("client")){
     })
 }
 
-
-
 store.subscribe(()=>{
     console.log(store.getState())
 } )
-
 
 ReactDOM.render(
   <Provider store={store}> 

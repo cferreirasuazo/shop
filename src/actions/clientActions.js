@@ -50,13 +50,13 @@ export const fetchClient = (cliente) => {
                     type:FETCH_CLIENT,
                     payload:response.data.cliente
                 });
-              localStorage.setItem("client", JSON.stringify(response.data.cliente))
+             localStorage.setItem("client", JSON.stringify(response.data.cliente))
                 resolve(response)
                 dispatch({
                    type:FETCH_ARTICLES,
                    payload:response.data.articulos
                 });
-              localStorage.setItem("cart", JSON.stringify(response.data.articulos))
+            localStorage.setItem("cart", JSON.stringify(response.data.articulos))
                 dispatch({
                    type:SET_LOG,
                    payload:true

@@ -1,3 +1,17 @@
+@media only screen and (max-width: 800px) {
+    .cart-box {
+        flex-wrap: wrap-reverse
+        
+    }
+
+    .cart-box .cart__confirmation{
+        margin-bottom: 15px;
+    }
+  }
+
+
+
+
 .cart-box{
     display: flex;
     flex-direction: row;

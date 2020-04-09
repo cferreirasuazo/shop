@@ -19,7 +19,6 @@ const store = createStore(rootReducer,middleware);
 if(localStorage.getItem("client")){
   var client = JSON.parse(localStorage.getItem("client"))
   var cart = JSON.parse(localStorage.getItem("cart"))
-  console.log(cart)
     store.dispatch({
       type:FETCH_CLIENT,
       payload:client

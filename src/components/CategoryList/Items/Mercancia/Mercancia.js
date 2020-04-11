@@ -20,6 +20,7 @@ function Mercancia({match}){
     useEffect(()=>{
         const url = `http://localhost:4000/api/article/${categoriaUrl}`;
         axios.get(url).then((req)=>{
+
             setArticulos(req.data)
             setLoadingState(false)
 
@@ -27,7 +28,7 @@ function Mercancia({match}){
     },[])
 
     const fakeList = articulos.map((item,key)=>(
-            <Articulo key={key} item={item} />
+            <Articulo key={item._id} item={item} />
     ))
 
     const [isLoading,setLoadingState] = useState(true);
@@ -52,7 +53,6 @@ function Mercancia({match}){
             }
         }else if(orden === "menor-mayor"){
             return function(items){
-                console.log(orden)
                 var arr = items.sort((a,b)=>{
                     
                     return Number(a.precio) - Number(b.precio)
@@ -62,7 +62,7 @@ function Mercancia({match}){
             }
         }else if(orden === "mayor-menor"){
             return function(items){
-                console.log(orden)
+            
                 var arr = items.sort((a,b)=>{
                     
                     return Number(b.precio) - Number(a.precio)

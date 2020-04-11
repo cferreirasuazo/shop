@@ -12,7 +12,7 @@ const CartItem = (props) => {
     var {articulo} = props.articulo
 
     return (
-        <Paper className={"cart-item"}>
+        <Paper key={articulo.id} className={"cart-item"}>
             <div className={"cart-item__info"}>
                 <Typography>{`Name: ${articulo.nombre}`}</Typography>
                 <Typography>{`Description: ${articulo.descripcion}`}</Typography>

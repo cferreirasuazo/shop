@@ -9,7 +9,7 @@ import {updateClient} from "../../actions/clientActions";
 
 const ProfileInfo = (props) => {
     var dispatch = useDispatch()
-    console.log("Client info", props.cliente)
+    
     return(
         <Box className={"profileinfo-box"}>
             <h1>Profile Info</h1>

@@ -10,7 +10,6 @@ const Profile = () => {
     
     function logOut(e){
         e.preventDefault()
-        console.log("CLICKED")
         if(localStorage.getItem("client")){
             localStorage.clear()
             dispatch( { type:SET_LOG,payload:false } )

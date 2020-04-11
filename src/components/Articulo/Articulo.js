@@ -13,9 +13,7 @@ import Not_Found from "../Not_Found/Not_Found";
 import { history } from "../../utils/history";
 import {addToCart} from "../../actions/cartActions"
 
-
-
-function Articulo(props){
+function Articulo({addToCart}){
         const [currentArticle, setCurrentArticle] = useState({}) 
         const [amount, setAmount] = useState(1) 
         const [isSaving, setSaving] = useState(false);
@@ -31,7 +29,6 @@ function Articulo(props){
             }
             
         },[])
-
 
         const isInCart = function(articles,currentArticle){
             var inCart = false;
@@ -55,9 +52,8 @@ function Articulo(props){
                   correo:client
                 }
                 if(!isInCart(cart,currentArticle)){
-                    console.log("Added")
                     setSaving(true)
-                    props.addToCart(addToArticleRequest).then((resolve)=>{
+                    addToCart(addToArticleRequest).then((resolve)=>{
                         setSaving(resolve)
                     })  
                   }else{
@@ -74,7 +70,7 @@ function Articulo(props){
               }
             }else{
               //add popup if user is not loggin
-              console.log("Not logged")
+             
             }
         }
 

@@ -14,20 +14,20 @@ export const registerClient = (cliente) => {
 
     return (dispatch) =>{
         axios.post(url, {cliente}).then((res)=>{
-            console.log(res.data)
+            
         })
     }
 }
 
 export const updateClient = (request) =>{
     const url = "http://localhost:4000/api/cliente-update";
-    console.log("Action - updateClient")
+  
     return (dispatch) =>(
         //Returns a promise to return the success or rejection of the operation
         new Promise((resolve,reject)=>{
             axios.post(url,{request})
                 .then((response)=>{
-                    console.log(response)
+                  
                     dispatch({
                         type:UPDATE_CLIENT,
                         payload: response.data.update
@@ -45,7 +45,6 @@ export const fetchClient = (cliente) => {
         new Promise(function(resolve,reject){
             axios.post(url,{cliente})
             .then((response)=>{
-                console.log(response.data.cliente)
                 dispatch({
                     type:FETCH_CLIENT,
                     payload:response.data.cliente

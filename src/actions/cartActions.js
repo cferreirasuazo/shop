@@ -61,12 +61,11 @@ export const addToCart = (request) => {
 
 
 export const deleteArticle = (id) => {
-    console.log(id)
     const url = 'http://localhost:4000/api/article/delete';
         return (dispatch) => (
             new Promise((resolve,reject)=>{
                 axios.post(url,{id}).then((response)=>{
-                    console.log(response.data)
+            
                     dispatch({
                         type:DELETE_ARTICLE,
                         payload:response.data

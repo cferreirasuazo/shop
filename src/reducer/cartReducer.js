@@ -21,12 +21,12 @@ export default function cartReducer (state = initialState,action){
                 articles: action.payload
             }
         case ADDTOCART:
-            console.log(state.articles)
+    
             return {
                 articles:[...state.articles,action.payload]
             }
         case CREATE_ORDER:
-            console.log("CREATE_ORDER")
+        
             return {
                 articles:[]
             }

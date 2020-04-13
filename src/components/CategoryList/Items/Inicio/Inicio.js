@@ -19,6 +19,7 @@ class Inicio extends Component{
     componentDidMount(){
         const url = "http://localhost:4000/api/categorias";
         axios.get(url).then((data)=>{
+            console.log(this.state.categorias.length)
             this.setState({categorias:data.data})
             this.setState({isLoading:false})
         })

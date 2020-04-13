@@ -8,34 +8,36 @@ import "./styles.css"
 import axios from "axios";
 import Loading from "../../../Loading/Loading";
 
-const ordenar = ["a-z","z-a","menor-mayor","mayor-menor"].map((item)=>{
+const SortingList = ["a-z","z-a","menor-mayor","mayor-menor"].map((item)=>{
     return(
         <MenuItem key={item} value={item}>{item}</MenuItem>
     )
 })
 
 function Mercancia({match}){
-    const categoriaUrl = match.params.id;
-    const [articulos,setArticulos] = useState([]);
+    const categoryUrl = match.params.id;
+    const [articles,setArticles] = useState([]);
+    const [isLoading,setLoadingState] = useState(true);
+    const [sortBy,setSortBy] = useState("");
+
     useEffect(()=>{
-        const url = `http://localhost:4000/api/article/${categoriaUrl}`;
+        const url = `http://localhost:4000/api/article/${categoryUrl}`;
         axios.get(url).then((req)=>{
 
-            setArticulos(req.data)
+            setArticles(req.data)
             setLoadingState(false)
 
         })
     },[])
 
-    const fakeList = articulos.map((item,key)=>(
+    const ListUrls = articles.map((item,key)=>(
             <Articulo key={item._id} item={item} />
     ))
 
-    const [isLoading,setLoadingState] = useState(true);
-    const [orden,setOrden] = useState("");
+    
 
-    //Devuelve una Card list nuevo ordenado en orden alfabetico en base del nombre
-    function nuevoOrden(orden){
+    //function to handler sorting for components
+    function sortByHandler(orden){
 
         if(orden === "a-z"){
             return function(items){
@@ -74,7 +76,8 @@ function Mercancia({match}){
     }
 
     const handleClickSelect = (event) =>{
-        setOrden(event.target.value)
+        setSortBy(event.target.value)
+        sortByHandler(event.target.value)(articles)
     }
 
     return (
@@ -93,18 +96,18 @@ function Mercancia({match}){
                <FormControl className={"select"}>
                <InputLabel  htmlFor="orden">Ordenar por </InputLabel>
                     <Select
-                        value={orden}
+                        value={sortBy}
                         onChange={handleClickSelect}
                         
                     >
-                       {ordenar}
+                       {SortingList}
                     </Select>
                </FormControl>
                </form>
             </Box> 
             </Box>
            <Box className={"content"}>
-                {fakeList}
+                {ListUrls}
            </Box>
             </div>
              

@@ -37,26 +37,11 @@ const Articulo = ({item}) =>(
 
             <Name>{item.nombre}</Name>
             <Price>{`$ ${item.precio}`}</Price>
-        </StyledLink> 
-//       
+        </StyledLink>        
 )  
 
 
 
-// class Articulo extends Component{
-//     constructor(item){
-//         super(item)
-//         //this.addToCart = this.addToCart.bind(this)
-//     }
-
-//     // addToCart(item){
-//     //     props.addToCart(item)
-//     // }
-
-//     render(){
-//        
-//     }
-// }
 
 
 export default Articulo

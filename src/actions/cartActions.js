@@ -27,11 +27,13 @@ export const createOrder = (email)=>{
     return (dispatch) => (
         new Promise((resolve,reject)=>{
             axios.post(url,{email})
-                .then((resolve)=>{
+                .then((responde)=>{
                     dispatch({
                         type:CREATE_ORDER,
                         payload:[]
                     })
+
+                    resolve(true)
                 })
         })
     )

@@ -31,7 +31,7 @@ class Cart extends Component{
 
     submitOrder(){
         this.props.createOrder(this.props.email).then((success) => (
-            console.log("ORDER_CREATED")
+            window.alert("Order submited")
         ))
 
     }

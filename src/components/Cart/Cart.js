@@ -5,20 +5,18 @@ import CartItem from "../CartItem/CartItem";
 import { connect } from 'react-redux';
 import {deleteArticle, createOrder} from "../../actions/cartActions"
 import EmptyCart from "../EmpyCart/EmptyCart";
-class Cart extends Component{
-    constructor(props){
-        super(props)
-        this.handleDelete = this.handleDelete.bind(this)
-      
-    }
 
-    handleDelete(id){
+
+const Cart = (props) =>{
+
+
+   function handleDelete(id){
         
-        this.props.deleteArticle(id)
+        props.deleteArticle(id)
         
     }
     
-    getSubtotal(articles){
+    function getSubtotal(articles){
 
         var total = articles.map((item)=>{
             return item.cantidad * item.articulo.precio;
@@ -29,57 +27,55 @@ class Cart extends Component{
        
     }
 
-    submitOrder(){
-        this.props.createOrder(this.props.email).then((success) => (
+    function submitOrder(){
+        props.createOrder(props.email).then((success) => (
             window.alert("Order submited")
         ))
 
     }
 
-
-    render(){
-        return (
-            <div>
-                
-                {
-                    (this.props.items.length > 0) ? 
-                    <Container className="cart-box">
-                    <Box className={"cart__products-list"}>
-                        {
-                            this.props.items.map((item,key)=>(
-                                <CartItem key={key} articulo={item} handleDelete={this.handleDelete} />
-                            ))
-                        }
-                    </Box>
-                    <Paper className={"cart__confirmation"}>
-                            <div className={"order-summary"}>
-                                <p>Order Summary</p>
-                                <div className={"item-value"}>
-                                    <p>Items</p><p>{this.getSubtotal(this.props.items)}</p>
-                                </div>
-                                {/* <div className={"item-value"}>
-                                    <p>Sales Tax & Shipping</p><p>250</p>
-                                </div> */}
-                            </div>
-
-                            <div className={"cart__confirmation-actions"}>
-                                <Button className={"cart__confirmation-btn"} variant="contained" size="large" color="primary" onClick={()=>(this.submitOrder())} >Submit Order</Button>
-                            </div>
-                    </Paper>
-                
-                 
-            </Container>
-                :
-                <EmptyCart></EmptyCart>
-                
-                
-                }
-            </div>
+    return (
+        <div>
             
-        )
-    }
+            {
+                (props.items.length > 0) ? 
+                <Container className="cart-box">
+                <Box className={"cart__products-list"}>
+                    {
+                        props.items.map((item,key)=>(
+                            <CartItem key={key} articulo={item} handleDelete={handleDelete} />
+                        ))
+                    }
+                </Box>
+                <Paper className={"cart__confirmation"}>
+                        <div className={"order-summary"}>
+                            <p>Order Summary</p>
+                            <div className={"item-value"}>
+                                <p>Items</p><p>{getSubtotal(props.items)}</p>
+                            </div>
+                            {/* <div className={"item-value"}>
+                                <p>Sales Tax & Shipping</p><p>250</p>
+                            </div> */}
+                        </div>
+
+                        <div className={"cart__confirmation-actions"}>
+                            <Button className={"cart__confirmation-btn"} variant="contained" size="large" color="primary" onClick={()=>(submitOrder())} >Submit Order</Button>
+                        </div>
+                </Paper>
+            
+             
+        </Container>
+            :
+            <EmptyCart></EmptyCart>
+            
+            
+            }
+        </div>
+
+    )
 
 }
+
 
 const mapStateToProps = store => ({
     items: store.cart.articles,
@@ -94,5 +90,7 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Cart)
+
+
 
 

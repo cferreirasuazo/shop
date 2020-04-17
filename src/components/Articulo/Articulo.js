@@ -2,7 +2,7 @@ import React ,{useEffect, useState } from "react";
 import {useDispatch, useSelector,connect} from "react-redux";
 import "./styles.css";
 import {withRouter,useLocation} from "react-router-dom"
-import {Container, Button} from "@material-ui/core";
+import {Container, Button, Box} from "@material-ui/core";
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
@@ -73,7 +73,7 @@ function Articulo({addToCart}){
           };
 
         return(
-            <Container  className={"articulo-box"}>
+            <Box  className={"articulo-box"}>
               <div className={"articulo-photo"}>
                 <PhotoIcon className={"icon"}></PhotoIcon>
               </div>
@@ -98,7 +98,7 @@ function Articulo({addToCart}){
                     </Popper>
                 </div>
               </div>
-            </Container>
+            </Box>
         )
     }
 

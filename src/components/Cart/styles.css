@@ -1,6 +1,7 @@
 @media only screen and (max-width: 800px) {
     .cart-box {
-        flex-wrap: wrap-reverse
+        flex-wrap: wrap-reverse;
+        overflow: auto;
         
     }
 
@@ -16,21 +17,19 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: flex-start;
+    overflow: auto;
+    padding: 10px;
     
 }
 
 .cart-box .cart__products-list{
     border: 1px solid black;
-    padding: 10px;
+    overflow: auto;
+
 }
 
-.cart-box .cart__confirmation{
-    flex-grow: 0;
-    border: 1px solid black;
-    max-width: 470px;
-    height: 250px;
-    
-}
+
 
 .order-summary{
     
@@ -50,6 +49,14 @@
     padding: 0px 10px 0px 10px ;
     border: 1px solid black;
 }
+
+.cart-box .cart__confirmation{
+    flex-grow: 0;
+    border: 1px solid black;
+    max-width: 320px;   
+    overflow: auto;
+}
+
 .cart__confirmation-actions{
     display: flex;
     justify-content: center;

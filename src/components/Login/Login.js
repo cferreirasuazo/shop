@@ -37,20 +37,20 @@ const Login = (props) => {
     }
 
     return (
-        <Container className={"login-box"}>
-        <Box className={"login-wrapper"} display="flex" flexDirection="column" alignItems="center">
+        <Box className={"login-box"}>
+        <Box className={"login-wrapper login-child"} display="flex" flexDirection="column" alignItems="center">
             <TextField className={"login-input"} onChange={_handlerChange} required id="login-email" label="email"  />
             <TextField className={"login-input"} onChange={_handlerChange} required id="login-password" label="Password"  />
             <Button onClick={getCredentials}>Login</Button>
             <p style={{display: !isFound ? "inline" : "none" }}>User Not Found </p>              
         </Box>
-        <Box className={"new-account-pop"}>
+        <Box className={"new-account-pop login-child"}>
             <h1>Get an account today!!</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit pharetra.</p>
             <Link to={"/user/register"}>Continue</Link>
         </Box>
 
-        </Container>  
+        </Box>  
     )
 }
 

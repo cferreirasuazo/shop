@@ -45,7 +45,6 @@ class App extends Component {
             <Route path="/articulo/:id" exact render={() => <Articulo/> }/>
             <Route render={() => <NotFound></NotFound>} />
          </Switch>
-         <Footer></Footer>
         </Router>
        
       </div>

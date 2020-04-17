@@ -39,7 +39,7 @@ const Cart = (props) =>{
             
             {
                 (props.items.length > 0) ? 
-                <Container className="cart-box">
+                <Box className="cart-box">
                 <Box className={"cart__products-list"}>
                     {
                         props.items.map((item,key)=>(
@@ -64,7 +64,7 @@ const Cart = (props) =>{
                 </Paper>
             
              
-        </Container>
+        </Box>
             :
             <EmptyCart></EmptyCart>
             

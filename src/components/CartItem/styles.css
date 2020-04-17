@@ -1,11 +1,21 @@
-
+@media only screen and (max-width: 800px) {
+    .cart-item{
+        flex-wrap: wrap;
+        overflow: auto;
+    }
+}
 .cart-item{
-    margin-bottom: 10px;
     border: 1px solid black;
-    width:600px;
+
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom:12px;
+    overflow: auto;
+}
+
+.cart-item:last-child{
+    margin-bottom:0px;
 }
 
 /*.cart-item__picture*/

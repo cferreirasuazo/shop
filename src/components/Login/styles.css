@@ -1,16 +1,20 @@
 .login-box{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 5px;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+
+}
+
+.login-child{
+    border:1px solid red;
+    padding: 10px;
+    width:480px;
 }
 
 
 .login-wrapper{
-    border: 1px solid red;
-    width: 500px;
-    height: 190px;
-    margin-right: 10px;
+
 }
 
 .login-input{
@@ -22,6 +26,5 @@
 }
 
 .new-account-pop{
-    padding: 10px;
-    border: 1px solid red;
+
 }

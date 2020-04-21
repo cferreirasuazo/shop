@@ -3,27 +3,31 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { fade } from '@material-ui/core/styles/colorManipulator';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
+import { connect } from 'react-redux';
+import {history} from "../../utils/history";
+import HomeIcon from "./HomeIcon";
 
 
-
-
+const redirectTo = (url) =>( history.push(url) )
+      
+const styles = {
+  backgroundColor: "#204051",
+  color: "#cae8d5"
+}
 
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
+    paddingBottom:16,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -90,7 +94,7 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-function PrimarySearchAppBar() {
+function PrimarySearchAppBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -165,14 +169,13 @@ function PrimarySearchAppBar() {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+          <AccountCircle></AccountCircle>
         </IconButton>
         <p>Profile</p>
       </MenuItem>
       <MenuItem>
           <IconButton>
             <ShoppingCart></ShoppingCart>
-
           </IconButton>
       </MenuItem>
 
@@ -182,39 +185,25 @@ function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar style={styles} position="static">
         <Toolbar>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'Search' }}
-            />
-          </div>
+        <div  onClick={()=>(history.push("/"))}>
+            <HomeIcon></HomeIcon>
+        </div>
+        
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="Show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
+            <IconButton
+               color="inherit"
+               onClick={() => (redirectTo("/user/profile")) }
+            >
+             
+              <AccountCircle></AccountCircle>
             </IconButton>
             <IconButton
-              edge="end"
-              aria-label="Account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
               color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-            <IconButton>
+              onClick={() => (redirectTo("/user/cart")) }
+              >
               <ShoppingCart></ShoppingCart>
             </IconButton> 
           </div>
@@ -240,4 +229,9 @@ function PrimarySearchAppBar() {
   );
 }
 
-export default PrimarySearchAppBar;
+const mapStateToProps = store =>({
+    islogged: store.client.islogged
+})
+
+export default connect(mapStateToProps,null)(PrimarySearchAppBar)
+

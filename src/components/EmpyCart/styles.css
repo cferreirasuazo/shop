@@ -1,0 +1,33 @@
+.empty_cart-container{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.empty_cart-box{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid grey;
+    text-align: center;
+    width:440px;
+    padding: 12px;
+    background-color: #3b6978;
+    color: #cae8d5;
+    text-transform: uppercase;
+
+    
+}
+
+.empty_cart-box .icon{
+    font-size:5em;
+    color: #84a9ac;
+    
+}
+
+.empty_cart-box p{
+    font-size: 20px;
+   
+}

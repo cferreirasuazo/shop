@@ -48,7 +48,7 @@
     "server": "./node_modules/nodemon/bin/nodemon.js server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "eject": "react-scripts eject"
    
   }
 }

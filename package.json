@@ -32,9 +32,22 @@
     "faker": "^4.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start":  "concurrently \"npm run server\" \"react-scripts start\"",
+    "server": "./node_modules/nodemon/bin/nodemon.js server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "bcryptjs": "^2.4.3",
+    "boom": "^7.3.0",
+    "cors": "^2.8.5",
+    "dayjs": "^1.8.23",
+    "dotenv": "^8.2.0",
+    "faker": "^4.1.0",
+    "fastify": "^2.6.0",
+    "fastify-cors": "^3.0.0",
+    "fastify-swagger": "^2.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.1",
+    "nodemon": "^1.19.1"
   }
 }

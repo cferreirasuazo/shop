@@ -12,8 +12,10 @@ There are a lot of simple applications created with this technologies so I wante
 -styling using styled-components
 
 ## API features
+    Using Fastify for http request and methods
+    Nodemon for monitoring 
+    MongoDB for database
+    Mongoose for object modeling 
+    Bcriptjs for hashing passwords
 
 ## Author: Cristhian Ferreira
-
-## Migrations
-I'm using redux for state management. for future improvement, I'll switch to context API.

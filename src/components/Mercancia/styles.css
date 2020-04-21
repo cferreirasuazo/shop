@@ -1,0 +1,40 @@
+.mercancia{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.buscador{ /*product-search*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+
+.form{
+    
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.form .select{
+    width:155px;
+    margin-right: 10px;
+}
+
+.content{ /*product-grid*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+}
+
+
+.item{
+    padding: 10px;
+    border: 1px solid red;
+}

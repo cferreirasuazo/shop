@@ -1,40 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import AppBar from "./components/AppBar/AppBar"
-import CategoryList from "./components/CategoryList/CategoryList"
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import Inicio from "./components/CategoryList/Items/Inicio/Inicio";
+import AppBar from "./components/AppBar/AppBar";
+import {Switch, Route,Router} from 'react-router-dom';
+import Home from "./components/Home/Home";
 import Nosotros from "./components/CategoryList/Items/Nosotros/Nosotros";
-import Footer from "./components/Footer/Footer"
-
-import shopping_bag from "./components/Logo/shopping_bag.png";
-import items from "../tools/test"
-
+import Mercancia from "./components/Mercancia/Mercancia";
+import Cart from "./components/Cart/Cart";
+import Profile from "./components/Profile/Profile"
+import Articulo from "./components/Articulo/Articulo";
+import Login from "./components/Login/Login";
+import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
+import {history} from "../src/utils/history";
+import Register from "./components/Register/Register";
+import NotFound from "./components/NotFound/NotFound"
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 class App extends Component {
+  
   render() {
-    console.log(items)
+    
     return (
-
-      <BrowserRouter>
       <div className="App">
-      <AppBar/>
       
-        <div className="App-header">
-            <img src={shopping_bag} />
-        </div>
-        <CategoryList/>
-         <Switch>
-            <Route path = "/" exact component={Inicio}  />
-            <Route path = "/nosotros" component ={Nosotros}  />
-            <Route path = "/ofertas"  />
-            <Route path = "/mercancia" />
-            <Route path = "/pedidos" />
-            <Route path = "/categorias" />
+      <Router history={history} >
+      <AppBar/>
+         <Switch  >
+            <Route path="/" exact component={Home}  />
+            <Route path="/user/cart" exact component={Cart} />
+            <PrivateRoute path="/user/profile" component={Profile} />
+            <Route path="/user/profileinfo" exact component={ProfileInfo} />
+            <Route path="/user/login" component={Login} />
+            <Route path="/user/register" component={Register} />
+            <Route path="/nosotros" component={Nosotros}  />
+            <Route path="/ofertas" />
+            <Route path="/pedidos" />
+            <Route path="/categorias" />
+            <Route path="/mercancia/:id" component={Mercancia}/>  
+            <Route path="/articulo/:id" exact render={() => <Articulo/> }/>
+            <Route render={() => <NotFound></NotFound>} />
          </Switch>
+        </Router>
+       
       </div>
-      <Footer></Footer>
-      </BrowserRouter>
+     
+      
      
     );
   }

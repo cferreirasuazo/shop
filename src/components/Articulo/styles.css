@@ -1,0 +1,41 @@
+:root{
+    --icon-measure: 250px;
+}
+
+
+.articulo-box{
+    
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin:10px;
+    
+}
+
+.articulo{
+    background-color: #3b6978;
+    padding: 32px;
+    color:#cae8d5;
+    border-radius: 5px;
+}
+
+.articulo-photo{
+   
+}
+
+.articulo-photo .icon{
+    width: var(--icon-measure);
+    height: var(--icon-measure)
+}
+
+.articulo-box__actions{
+   
+  
+}
+
+.articulo-box__actions .articulo-box__btn{
+    background-color: yellow;
+    margin-left:10px;
+}

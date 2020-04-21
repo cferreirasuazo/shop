@@ -2,19 +2,53 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
   "dependencies": {
+    "@material-ui/core": "^4.9.5",
+    "@material-ui/icons": "^4.2.1",
+    "axios": "^0.19.0",
+    "formik": "^2.1.4",
+    "formik-material-ui": "^2.0.0-beta.1",
+    "history": "^4.10.1",
+    "immer": "^6.0.2",
     "material-ui": "^1.0.0-beta.47",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-loading": "^2.0.3",
+    "react-redux": "^7.1.1",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "0.9.5",
     "react-slick": "^0.24.0",
-    "styled-components": "^4.3.1"
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.3.1",
+    "bcryptjs": "^2.4.3",
+    "boom": "^7.3.0",
+    "cors": "^2.8.5",
+    "dayjs": "^1.8.23",
+    "dotenv": "^8.2.0",
+    "faker": "^4.1.0",
+    "fastify": "^2.6.0",
+    "fastify-cors": "^3.0.0",
+    "fastify-swagger": "^2.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.1",
+    "nodemon": "^1.19.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "faker": "^4.1.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
+    "start":  "concurrently \"npm run server\" \"react-scripts start\"",
+    "server": "./node_modules/nodemon/bin/nodemon.js server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+   
   }
 }

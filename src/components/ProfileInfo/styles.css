@@ -1,0 +1,14 @@
+.profileinfo-box{
+    margin:25px;
+    padding-left: 50px;
+    
+}
+
+.profileinfo-box .profileinfo-box-bottom{
+    margin: 25px;
+}
+
+
+.profileinfo-box .profileinfo-box-label{
+    width:305px;
+}

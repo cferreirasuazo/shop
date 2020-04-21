@@ -1,0 +1,18 @@
+.not-found-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+
+}
+.not_found-box{  
+    max-width: 700px;  
+
+}
+
+.not-found-box__title {
+    font-size:100px;
+    padding: 0;
+    margin: 0;
+}

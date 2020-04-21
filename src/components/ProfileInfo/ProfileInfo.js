@@ -6,12 +6,13 @@ import { Button} from '@material-ui/core';
 import { TextField } from 'formik-material-ui';
 import "./styles.css"
 import {updateClient} from "../../actions/clientActions";
-
+import styles from "./styles"
 const ProfileInfo = (props) => {
     var dispatch = useDispatch()
+    var classes = styles()
     
     return(
-        <Box className={"profileinfo-box"}>
+        <Box className={classes.root}>
             <h1>Profile Info</h1>
             <Formik
       initialValues={{
@@ -66,45 +67,49 @@ const ProfileInfo = (props) => {
     >
       {({ submitForm, isSubmitting }) => (
         <Form>
-          <Field className={"profileinfo-box-label"}
+          <Field className={classes.label}
             component={TextField}
             name="nombre"
             type="text"
             label="Name"
+            variant="outlined"
          
            
           />
           <br />
-          <Field className={"profileinfo-box-label"}
+          <Field className={classes.label}
             component={TextField}
             type="text"
             label="Lastname"
             name="apellido"
+            variant="outlined"
             
           />
        
           <br />
-          <Field className={"profileinfo-box-label"}
+          <Field className={classes.label}
             component={TextField}
             type="text"
             label="Email"
             disabled
             name="correo"
+            variant="outlined"
             
           />
        
           <br />
-          <Field className={"profileinfo-box-label"}
+          <Field className={classes.label}
             component={TextField}
             multiline
             rowsMax={6}
             type="text"
             label="Address"
             name="direccion"
+            variant="outlined"
           />
        
           <br />
-          <Button className={"profileinfo-box-bottom"}
+          <Button className={classes.button}
             variant="contained"
             color="primary"
             disabled={isSubmitting}

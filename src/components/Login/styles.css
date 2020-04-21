@@ -1,30 +1,55 @@
+
+
 .login-box{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 5px;
     flex-wrap: wrap;
+    min-height: 300px;
 
 }
 
 .login-child{
-    border:1px solid red;
-    padding: 10px;
+    background-color: #cae8d5;
+    padding: 20px;
     width:480px;
+    color: #3b6978;
+    
 }
+
 
 
 .login-wrapper{
-
+    display: flex;
+    margin-right: 8px;
 }
 
-.login-input{
-    width:200px;
+.login-wrapper button{
+    margin-top: 16px;
 }
 
-.login-button{
-    width:275px;
+.btn{
+    background-color:#3b6978;
+    color:azure;
+    font-size: 0.875rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 2.5;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    min-width: 64px;
+    border: 0;
+    border-radius: 4px;
 }
 
-.new-account-pop{
 
+.register  h1 p{
+    color: #3b6978;
+}
+
+@media only screen and (max-width: 800px) {
+    .login-wrapper{
+        margin-right: 0px;
+        margin-bottom: 8px;
+    }
 }

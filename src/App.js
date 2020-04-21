@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import AppBar from "./components/AppBar/AppBar";
-import CategoryList from "./components/CategoryList/CategoryList";
 import {Switch, Route,Router} from 'react-router-dom';
-import Inicio from "./components/CategoryList/Items/Inicio/Inicio";
+import Home from "./components/Home/Home";
 import Nosotros from "./components/CategoryList/Items/Nosotros/Nosotros";
-import Footer from "./components/Footer/Footer";
-import Mercancia from "./components/CategoryList/Items/Mercancia/Mercancia";
+import Mercancia from "./components/Mercancia/Mercancia";
 import Cart from "./components/Cart/Cart";
 import Profile from "./components/Profile/Profile"
 import Articulo from "./components/Articulo/Articulo";
@@ -14,24 +12,19 @@ import Login from "./components/Login/Login";
 import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
 import {history} from "../src/utils/history";
 import Register from "./components/Register/Register";
-import NotFound from "./components/Not_Found/Not_Found"
+import NotFound from "./components/NotFound/NotFound"
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-
-
 class App extends Component {
   
   render() {
     
     return (
-      
-     
       <div className="App">
       
       <Router history={history} >
       <AppBar/>
-        <CategoryList/>
          <Switch  >
-            <Route path="/" exact component={Inicio}  />
+            <Route path="/" exact component={Home}  />
             <Route path="/user/cart" exact component={Cart} />
             <PrivateRoute path="/user/profile" component={Profile} />
             <Route path="/user/profileinfo" exact component={ProfileInfo} />

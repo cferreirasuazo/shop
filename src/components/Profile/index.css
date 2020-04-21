@@ -1,3 +1,16 @@
+@media only screen and (max-width: 800px) {
+    .profile-box{
+        flex-wrap: wrap;
+    }
+
+    .account-item{
+        margin-bottom: 8px;
+    }
+
+    
+}
+
+
 .profile-box{
     padding: 15px;
     display: flex;
@@ -6,9 +19,26 @@
 }
 
 .account-item{
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid grey;
-    padding: 20px;
+    padding: 12px;
+    width:  12.5em;
+    height: 12.5em;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color:#cae8d5;
+    background-color: #3b6978;
 }
+
+.account-item h1{
+    font-size:24px;
+}
+
+
+

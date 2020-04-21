@@ -3,26 +3,31 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { fade } from '@material-ui/core/styles/colorManipulator';
-import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
-import {Link} from "react-router-dom"
 import { connect } from 'react-redux';
 import {history} from "../../utils/history";
+import HomeIcon from "./HomeIcon";
+
 
 const redirectTo = (url) =>( history.push(url) )
       
+const styles = {
+  backgroundColor: "#204051",
+  color: "#cae8d5"
+}
+
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
+    paddingBottom:16,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -180,28 +185,14 @@ function PrimarySearchAppBar(props) {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar style={styles} position="static">
         <Toolbar>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'Search' }}
-            />
-          </div>
+        <div  onClick={()=>(history.push("/"))}>
+            <HomeIcon></HomeIcon>
+        </div>
+        
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="Show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
             <IconButton
                color="inherit"
                onClick={() => (redirectTo("/user/profile")) }

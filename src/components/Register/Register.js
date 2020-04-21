@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useDispatch, useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import { Formik, Form, Field } from 'formik';
@@ -10,6 +10,10 @@ import axios from "axios";
 import {history} from "../../utils/history";
 
 const Register = () =>{
+    const style = {
+        
+      
+    }
     
     const [emailExist, setEmailExist] = useState(false);
     const [isSuccessful, setSuccessful] = useState(false);
@@ -67,7 +71,8 @@ const Register = () =>{
               dispatch({type:"SET_LOG",payload:true})
               setEmailExist(true)
               resetForm()
-              history.push("/")    
+              history.push("/")   
+              setSuccessful(true) 
         })
   
         
@@ -75,7 +80,7 @@ const Register = () =>{
   }}
 >
   {({ submitForm, isSubmitting }) => (
-    <Form>
+    <Form style={style}>
     <h1>Your Personal Information</h1>
       <Box>
       <Field 
@@ -83,6 +88,8 @@ const Register = () =>{
         name="nombre"
         type="text"
         label="Name"
+        variant="outlined"
+        style={{marginRight: "10px"}}
       />
       
       <Field 
@@ -90,6 +97,7 @@ const Register = () =>{
         type="text"
         label="Lastname"
         name="apellido"
+        variant="outlined"
       />
       </Box>
 
@@ -101,6 +109,7 @@ const Register = () =>{
         type="text"
         label="Email"
         name="correo"
+        variant="outlined"
       />
    
       <br />
@@ -115,6 +124,7 @@ const Register = () =>{
         type="text"
         label="Address"
         name="direccion"
+        variant="outlined"
         
       />
    
@@ -126,6 +136,8 @@ const Register = () =>{
         name="password"
         type="password"
         label="Password"
+        variant="outlined"
+        style={{marginBottom:"8px"}}
       />
 
       <br />
@@ -134,6 +146,9 @@ const Register = () =>{
         name="check_password"
         type="password"
         label="Enter again password"
+        variant="outlined"
+        style={{marginBottom:"10px"}}
+   
       />
       <br />
 
@@ -142,6 +157,7 @@ const Register = () =>{
         color="primary"
         disabled={isSubmitting}
         onClick={submitForm}
+    
       >
         Submit
       </Button>

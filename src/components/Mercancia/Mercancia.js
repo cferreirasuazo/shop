@@ -6,9 +6,9 @@ import {Box,Container, InputLabel, MenuItem,
 import Articulo from "./Articulo";
 import "./styles.css"
 import axios from "axios";
-import Loading from "../../../Loading/Loading";
+import Loading from "../Loading/Loading";
 
-const SortingList = ["a-z","z-a","menor-mayor","mayor-menor"].map((item)=>{
+const SortingList = ["a-z","z-a","low-high","high-low"].map((item)=>{
     return(
         <MenuItem key={item} value={item}>{item}</MenuItem>
     )
@@ -34,8 +34,6 @@ function Mercancia({match}){
             <Articulo key={item._id} item={item} />
     ))
 
-    
-
     //function to handler sorting for components
     function sortByHandler(orden){
 
@@ -53,7 +51,7 @@ function Mercancia({match}){
                 
                 return arr
             }
-        }else if(orden === "menor-mayor"){
+        }else if(orden === "low-high"){
             return function(items){
                 var arr = items.sort((a,b)=>{
                     
@@ -62,7 +60,7 @@ function Mercancia({match}){
 
                 return arr;
             }
-        }else if(orden === "mayor-menor"){
+        }else if(orden === "high-low"){
             return function(items){
             
                 var arr = items.sort((a,b)=>{
@@ -88,13 +86,13 @@ function Mercancia({match}){
             :<div>
                              <Box className="buscador">               
            <Box>
-               <h1 className={""} >Mercancia disponible</h1>
+               <h1 className={""} >{`${categoryUrl} Available`}</h1>
            </Box>
            <Box>
                <form className={"form"}>
 
                <FormControl className={"select"}>
-               <InputLabel  htmlFor="orden">Ordenar por </InputLabel>
+               <InputLabel  htmlFor="orden">Sort By </InputLabel>
                     <Select
                         value={sortBy}
                         onChange={handleClickSelect}

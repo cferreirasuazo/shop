@@ -1,8 +1,7 @@
 import React, {useState} from "react";
-import {Box, Button, TextField, Container} from  "@material-ui/core";
+import {Box, TextField} from  "@material-ui/core";
 import {connect} from "react-redux";
 import {fetchClient} from "../../actions/clientActions";
-import Link from "react-router-dom/Link";
 import "./styles.css";
 
 import {history} from "../../utils/history";
@@ -38,16 +37,17 @@ const Login = (props) => {
 
     return (
         <Box className={"login-box"}>
-        <Box className={"login-wrapper login-child"} display="flex" flexDirection="column" alignItems="center">
-            <TextField className={"login-input"} onChange={_handlerChange} required id="login-email" label="email"  />
-            <TextField className={"login-input"} onChange={_handlerChange} required id="login-password" label="Password"  />
-            <Button onClick={getCredentials}>Login</Button>
+        <Box className={"login-wrapper login-child"} display="flex" flexDirection="column">
+            <TextField  style={{color: "#3b6978"}} variant="outlined" className={"login-input"} onChange={_handlerChange} required id="login-email" label="email"  />
+            <TextField  style={{color: "#3b6978"}} variant="outlined" className={"login-input"} onChange={_handlerChange} required id="login-password" type="password" label="Password"  />
+            <button className={"btn"} onClick={getCredentials}>Login</button>
+         
             <p style={{display: !isFound ? "inline" : "none" }}>User Not Found </p>              
         </Box>
-        <Box className={"new-account-pop login-child"}>
+        <Box className={"register login-child"}>
             <h1>Get an account today!!</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit pharetra.</p>
-            <Link to={"/user/register"}>Continue</Link>
+            <button className={"btn"} onClick={()=>(history.push("/user/register"))} >Continue</button>
         </Box>
 
         </Box>  

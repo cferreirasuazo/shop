@@ -1,5 +1,5 @@
-import React, {Component} from "react"
-import {Button, Box, Container, Paper} from "@material-ui/core";
+import React from "react"
+import {Button, Box, Paper} from "@material-ui/core";
 import "./styles.css";
 import CartItem from "../CartItem/CartItem";
 import { connect } from 'react-redux';
@@ -35,7 +35,7 @@ const Cart = (props) =>{
     }
 
     return (
-        <div>
+        <div className={"cart"}>
             
             {
                 (props.items.length > 0) ? 
@@ -53,13 +53,10 @@ const Cart = (props) =>{
                             <div className={"item-value"}>
                                 <p>Items</p><p>{getSubtotal(props.items)}</p>
                             </div>
-                            {/* <div className={"item-value"}>
-                                <p>Sales Tax & Shipping</p><p>250</p>
-                            </div> */}
                         </div>
 
                         <div className={"cart__confirmation-actions"}>
-                            <Button className={"cart__confirmation-btn"} variant="contained" size="large" color="primary" onClick={()=>(submitOrder())} >Submit Order</Button>
+                            <Button className={"cart__confirmation-btn"} variant="contained" size="large" style={{backgroundColor: "#204051", color: "#cae8d5"}} onClick={()=>(submitOrder())} >Submit Order</Button>
                         </div>
                 </Paper>
             

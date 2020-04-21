@@ -8,7 +8,7 @@ import thunk from "redux-thunk";
 import cartReducer from "../src/reducer/cartReducer";
 import clientReducer from "../src/reducer/clientReducer";
 import {FETCH_CLIENT, SET_LOG} from "../src/actions/clientActions"
-import {FETCH_ARTICLES,createOrder} from "./actions/cartActions";
+import {FETCH_ARTICLES} from "./actions/cartActions";
 
 const middleware = applyMiddleware(thunk)
 

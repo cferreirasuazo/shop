@@ -1,14 +1,15 @@
-import React,{Component} from "react";
+import React  from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 
 const StyledLink = styled(Link)`
-    background: #539cb2;
+    background: #3b6978;
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+    border-radius:5px;
 `
 const Name = styled.p`
     color: #fff;
@@ -19,10 +20,10 @@ const Price = styled.div`
     height: 60px;
     border-radius: 50%;
     font-size: 15px;
-    color: #fff;
+    color: #3b6978;
     line-height: 60px;
     text-align: center;
-    background: green;
+    background: #cae8d5;
     align-self: flex-end;
 `
 

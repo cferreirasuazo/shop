@@ -21,7 +21,6 @@ const Profile = () => {
         <Box className={"profile-box"}>
             
             <Box className={"account-item"}>
-                <i className="fa fa-user-circle" aria-hidden="true"></i> 
                 <h1 className={"title"}>My Account</h1>
                 <div className={"list"}>
                      <div className={"list-item"}><Link to={"/user/profileinfo"}>Change Profile Info</Link></div>
